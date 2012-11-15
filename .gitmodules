@@ -1,0 +1,15 @@
+[submodule "spf13-vim"]
+	path = spf13-vim
+	url = git@github.com:spf13/spf13-vim
+[submodule "powerline"]
+	path = powerline
+	url = https://github.com/Lokaltog/powerline
+[submodule "powerline-fonts"]
+	path = powerline-fonts
+	url = git://github.com/Lokaltog/powerline-fonts.git
+[submodule "bash_completion/fabric-bash-autocompletion"]
+	path = bash_completion/fabric-bash-autocompletion
+	url = https://github.com/marcelor/fabric-bash-autocompletion
+[submodule "bash_completion/git"]
+	path = bash_completion/git
+	url = https://github.com/git/git

@@ -1,0 +1,5 @@
+sudo pip install flake8
+sudo pip install httpie
+sudo pip install awscli
+sudo pip install fabric
+sudo pip install pexpect

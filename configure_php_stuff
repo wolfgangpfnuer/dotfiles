@@ -1,0 +1,16 @@
+#Install PEAR on mac
+sudo cp /private/etc/php.ini.default /private/etc/php.ini
+echo 'include_path = ".:/php/includes:/usr/lib/php/pear"' | sudo tee -a /private/etc/php.ini
+sudo php /usr/lib/php/install-pear-nozlib.phar
+pear config-set php_ini /private/etc/php.ini
+pecl config-set php_ini /private/etc/php.ini
+sudo pear upgrade-all
+
+#CodeSniffer
+sudo pear install --alldeps php_codesniffer
+sudo ln -sf ~/dotfiles/phpcsmd_rulesets/Devbliss /usr/lib/php/pear/PHP/CodeSniffer/Standards/Devbliss
+
+#MessDetector
+sudo pear channel-discover pear.phpmd.org
+sudo pear channel-discover pear.pdepend.org
+sudo pear install --alldeps phpmd/PHP_PMD

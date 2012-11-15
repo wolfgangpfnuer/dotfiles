@@ -1,0 +1,36 @@
+#! /bin/sh
+
+if [ -x /opt/local/bin/port ]
+then
+
+    sudo port install curl # call url
+    sudo port install git-core+bash_completion # git with autocompletion
+    sudo port install htop # show running process (human readable)
+    sudo port install python27 # python 2.7
+    sudo port install py27-pip # python 2.7 package manager
+    sudo port install py27-distribute # easy_install
+    sudo port install python33 # python 3.3
+    sudo port install py33-distribute # easy_install
+    sudo port install python32 # python 3.2
+    sudo port install py32-pip # python 3.2package manager
+    sudo port install py32-distribute # easy_install
+    sudo port install ruby # programming language
+    sudo port install rb19-bundler # ruby package manager
+    sudo port install rsync # sync files with remote location
+    sudo port install tree # show content of directory as tree
+    sudo port install wget # download
+    sudo port install ngrep # network grep
+    sudo port install macvim # vi with gui
+    sudo port install python_select # select what is python
+    sudo port install openssl # newer openssl
+    sudo port install readline # commandline editing
+    sudo port select python python27 # select python27 (compatibility)
+    sudo port install puppet # puppet
+else
+    macports_pkg=MacPorts-2.1.2-10.8-MountainLion.pkg
+    open https://distfiles.macports.org/MacPorts/$macports_pkg
+    sleep 5
+    open ~/Downloads/$macports_pkg
+    echo 'please install macports and then re-run this script'
+    echo "add the following two lines to your profile:\nexport C_INCLUDE_PATH=/opt/local/include\nexport LIBRARY_PATH=/opt/local/lib"
+fi

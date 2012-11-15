@@ -1,0 +1,15 @@
+set wrap
+set nospell
+let g:Powerline_symbols = 'fancy' " install powerline-patched font
+let g:syntastic_check_on_open=1
+let g:syntastic_auto_loc_list=1
+let g:pymode_lint=0 " do sudo pip install flake8 first
+let g:undotree_SetFocusWhenToggle=1
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501'
+let g:syntastic_php_checkers=['phpcs', 'phpmd']
+let g:syntastic_php_phpcs_args='--report=csv --standard=Devbliss'
+let g:syntastic_puppet_puppetlint_args='--no-80chars-check'
+let g:syntastic_puppet_puppet_args='--ignoreimport'
+let g:syntastic_puppet_lint_arguments='--no-80chars-check'
+let g:syntastic_php_phpmd_args='~/dotfiles/phpcsmd_rulesets/DevblissMessDetectorRuleSet.xml'

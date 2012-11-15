@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo 'This script will add tags for the current folder to your tagfile at ~/.vimtags'
+echo 'To use this in vim, add the following line to your ~/.vimrc:'
+echo 'set tags=./tags;/,~/.vimtags'
+echo 'If you have old tags in your tagfile, you might want to delete it first:'
+echo 'rm ~/.vimtags'
+ctags -R -a -f ~/.vimtags `pwd`
