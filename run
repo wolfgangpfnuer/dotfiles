@@ -4,11 +4,7 @@ cd powerline
 ./setup.py install --user
 cd -
 ./osx
-ln -s ~/dotfiles/bash_profile ~/.profile # if bash is needed :-)
-ln -s ~/dotfiles/.vimrc.bundles.local ~/.vimrc.bundles.local
-ln -s ~/dotfiles/.vimrc.local ~/.vimrc.local
-sudo ln -s ~/dotfiles/bash_completion/git/contrib/completion/git-completion.bash /etc/bash_completion.d/git
-sudo ln -s ~/dotfiles/bash_completion/fabric-bash-autocompletion/fab /etc/bash_completion.d/fab
+./create_symlinks
 ./install_ports
 ./install_gem
 ./install_pip
