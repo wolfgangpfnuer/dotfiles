@@ -84,3 +84,21 @@ function alias_completion {
     done < <(alias -p | sed -Ene "s/$alias_regex/\1 '\2' '\3'/p")
     source "$tmp_file" && rm -f "$tmp_file"
 }; alias_completion
+
+##
+# Your previous /Users/wpfnuer/.profile file was backed up as /Users/wpfnuer/.profile.macports-saved_2013-10-31_at_15:36:21
+##
+
+# MacPorts Installer addition on 2013-10-31_at_15:36:21: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+
+##
+# Your previous /Users/wpfnuer/.profile file was backed up as /Users/wpfnuer/.profile.macports-saved_2013-11-01_at_09:17:43
+##
+
+# MacPorts Installer addition on 2013-11-01_at_09:17:43: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+

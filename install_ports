@@ -5,6 +5,7 @@ then
 
     sudo port install curl # call url
     sudo port install git-core+bash_completion # git with autocompletion
+    sudo port install git-devbliss # devbliss git-extensions
     sudo port install htop # show running process (human readable)
     sudo port install python27 # python 2.7
     sudo port install py27-pip # python 2.7 package manager
