@@ -1,0 +1,19 @@
+[core]
+	quotepath = false
+[color]
+	diff = auto
+	status = auto
+    branch = auto
+[merge]
+	conflictstyle = diff3
+[diff]
+    mnemonicprefix = true
+[user]
+	name = Wolfgang Pfnür
+	email = wolfgang.pfnuer@devbliss.com
+[push]
+    default = current
+[pull]
+    default = current
+[alias]
+	de = devbliss

@@ -5,17 +5,15 @@ then
 
     sudo port install iTerm2 # better terminal
     sudo port install curl # call url
-    sudo port install git-core+bash_completion # git with autocompletion
+    sudo port install git-core +bash_completion # git with autocompletion
     sudo port install git-devbliss # devbliss git-extensions
     sudo port install htop # show running process (human readable)
     sudo port install python27 # python 2.7
     sudo port install py27-pip # python 2.7 package manager
-    sudo port install py27-distribute # easy_install
+    sudo port install py27-setuptools # easy_install
     sudo port install python33 # python 3.3
-    sudo port install py33-distribute # easy_install
-    sudo port install python32 # python 3.2
-    sudo port install py32-pip # python 3.2package manager
-    sudo port install py32-distribute # easy_install
+    sudo port install py33-setuptools # easy_install
+    sudo port install py33-pip # python 3.2package manager
     sudo port install ruby # programming language
     sudo port install rb19-bundler # ruby package manager
     sudo port install rsync # sync files with remote location

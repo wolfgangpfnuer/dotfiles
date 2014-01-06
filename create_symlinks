@@ -3,5 +3,7 @@ ln -s ~/dotfiles/vimrc.bundles.local ~/.vimrc.bundles.local
 ln -s ~/dotfiles/vimrc.local ~/.vimrc.local
 ln -s ~/dotfiles/inputrc ~/.inputrc
 ln -s ~/dotfiles/config ~/.config
+ln -s ~/dotfiles/gitconfig ~/.gitconfig
+sudo mkdir -p /etc/bash_completion.d
 sudo ln -s ~/dotfiles/bash_completion/git/contrib/completion/git-completion.bash /etc/bash_completion.d/git
 sudo ln -s ~/dotfiles/bash_completion/fabric-bash-autocompletion/fab /etc/bash_completion.d/fab

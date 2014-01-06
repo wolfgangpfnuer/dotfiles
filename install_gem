@@ -1,1 +1,1 @@
-sudo gem install puppet-lint
+sudo gem install --pre puppet-lint -v 0.4.0.pre1
