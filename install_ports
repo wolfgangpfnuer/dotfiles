@@ -3,6 +3,7 @@
 if [ -x /opt/local/bin/port ]
 then
 
+    sudo port install iTerm2 # better terminal
     sudo port install curl # call url
     sudo port install git-core+bash_completion # git with autocompletion
     sudo port install git-devbliss # devbliss git-extensions
