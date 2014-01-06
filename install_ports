@@ -28,7 +28,7 @@ then
     sudo port select python python27 # select python27 (compatibility)
     sudo port install puppet # puppet
 else
-    macports_pkg=MacPorts-2.1.2-10.8-MountainLion.pkg
+    macports_pkg=MacPorts-2.2.1-10.9-Mavericks.pkg
     open https://distfiles.macports.org/MacPorts/$macports_pkg
     sleep 5
     open ~/Downloads/$macports_pkg
