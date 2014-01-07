@@ -1,8 +1,13 @@
-ln -s ~/dotfiles/bash_profile ~/.profile # if bash is needed :-)
+#!/bin/bash
+
+ln -s ~/dotfiles/bash_profile ~/.profile
 ln -s ~/dotfiles/vimrc.bundles.local ~/.vimrc.bundles.local
 ln -s ~/dotfiles/vimrc.local ~/.vimrc.local
 ln -s ~/dotfiles/inputrc ~/.inputrc
-ln -s ~/dotfiles/config ~/.config
+if [ ! -e ~/.config ]
+then
+    ln -s ~/dotfiles/config ~/.config
+fi
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 sudo mkdir -p /etc/bash_completion.d
 sudo ln -s ~/dotfiles/bash_completion/git/contrib/completion/git-completion.bash /etc/bash_completion.d/git
