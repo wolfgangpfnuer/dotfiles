@@ -25,6 +25,7 @@ then
     python_select `# select what is python` \
     openssl `# newer openssl` \
     readline `# commandline editing` \
+    ctags `# exuberant ctags` \
     puppet `# puppet`
 
     sudo port select python python27 # select python27 (compatibility)
