@@ -12,3 +12,4 @@ ln -s ~/dotfiles/gitconfig ~/.gitconfig
 sudo mkdir -p /etc/bash_completion.d
 sudo ln -s ~/dotfiles/bash_completion/git/contrib/completion/git-completion.bash /etc/bash_completion.d/git
 sudo ln -s ~/dotfiles/bash_completion/fabric-bash-autocompletion/fab /etc/bash_completion.d/fab
+sudo ln -s ~/dotfiles/bash_completion/vagrant-bash-completion/vagrant /etc/bash_completion.d/vagrant

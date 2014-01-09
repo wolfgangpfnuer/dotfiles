@@ -31,6 +31,7 @@ source ~/jura_ec2_vars
 
 source /etc/bash_completion.d/fab
 source /etc/bash_completion.d/git
+source /etc/bash_completion.d/vagrant
 source /opt/local/etc/bash_completion.d/git-devbliss
 
 # Automatically add completion for all aliases to commands having completion functions
