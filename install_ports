@@ -3,29 +3,31 @@
 if [ -x /opt/local/bin/port ]
 then
 
-    sudo port install iTerm2 # better terminal
-    sudo port install curl # call url
-    sudo port install git-core +bash_completion # git with autocompletion
-    sudo port install git-devbliss # devbliss git-extensions
-    sudo port install htop # show running process (human readable)
-    sudo port install python27 # python 2.7
-    sudo port install py27-pip # python 2.7 package manager
-    sudo port install py27-setuptools # easy_install
-    sudo port install python33 # python 3.3
-    sudo port install py33-setuptools # easy_install
-    sudo port install py33-pip # python 3.2package manager
-    sudo port install ruby # programming language
-    sudo port install rb19-bundler # ruby package manager
-    sudo port install rsync # sync files with remote location
-    sudo port install tree # show content of directory as tree
-    sudo port install wget # download
-    sudo port install ngrep # network grep
-    sudo port install macvim # vi with gui
-    sudo port install python_select # select what is python
-    sudo port install openssl # newer openssl
-    sudo port install readline # commandline editing
+    sudo port install \
+    iTerm2 `# better terminal` \
+    curl `# call url` \
+    git-core +bash_completion `# git with autocompletion` \
+    git-devbliss `# devbliss git-extensions` \
+    htop `# show running process (human readable)` \
+    python27 `# python 2.7` \
+    py27-pip `# python 2.7 package manager` \
+    py27-setuptools `# easy_install` \
+    python33 `# python 3.3` \
+    py33-setuptools `# easy_install` \
+    py33-pip `# python 3.2package manager` \
+    ruby `# programming language` \
+    rb19-bundler `# ruby package manager` \
+    rsync `# sync files with remote location` \
+    tree `# show content of directory as tree` \
+    wget `# download` \
+    ngrep `# network grep` \
+    macvim `# vi with gui` \
+    python_select `# select what is python` \
+    openssl `# newer openssl` \
+    readline `# commandline editing` \
+    puppet `# puppet`
+
     sudo port select python python27 # select python27 (compatibility)
-    sudo port install puppet # puppet
 else
     macports_pkg=MacPorts-2.2.1-10.9-Mavericks.pkg
     open https://distfiles.macports.org/MacPorts/$macports_pkg
