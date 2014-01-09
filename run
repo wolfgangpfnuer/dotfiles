@@ -8,4 +8,5 @@ cd -
 ./install_ports
 ./install_gem
 ./install_pip
+./install_phpcsmd
 sh <(curl https://j.mp/spf13-vim3 -L)
