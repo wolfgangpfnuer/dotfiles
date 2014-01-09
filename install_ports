@@ -14,7 +14,8 @@ then
     py27-setuptools `# easy_install` \
     python33 `# python 3.3` \
     py33-setuptools `# easy_install` \
-    py33-pip `# python 3.2package manager` \
+    py33-pip `# python 3.3 package manager` \
+    py33-ipython `# interactive python` \
     ruby `# programming language` \
     rb19-bundler `# ruby package manager` \
     rsync `# sync files with remote location` \
@@ -23,12 +24,14 @@ then
     ngrep `# network grep` \
     macvim `# vi with gui` \
     python_select `# select what is python` \
+    ipython_select `# select what is ipython` \
     openssl `# newer openssl` \
     readline `# commandline editing` \
     ctags `# exuberant ctags` \
     puppet `# puppet`
 
-    sudo port select python python27 # select python27 (compatibility)
+    sudo port select python python27 # compatibility
+    sudo port select ipython ipython33
 else
     macports_pkg=MacPorts-2.2.1-10.9-Mavericks.pkg
     open https://distfiles.macports.org/MacPorts/$macports_pkg
