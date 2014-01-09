@@ -1,5 +1,6 @@
-sudo pip-2.7 install flake8
-sudo pip-2.7 install httpie
-sudo pip-2.7 install awscli
-sudo pip-2.7 install fabric
-sudo pip-2.7 install pexpect
+sudo pip-2.7 install --upgrade \
+flake8 `# linting` \
+httpie `# like curl but with json support` \
+awscli `# amazon webservices command line interface` \
+fabric `# tool for deployment` \
+pexpect `# remote-control interactive bash processes from python`
