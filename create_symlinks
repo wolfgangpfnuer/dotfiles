@@ -10,9 +10,9 @@ fi
 
 for file in `ls $dotfiles`
 do
-    if [ -d $dotfiles/$file ] || [ -e ~/.$file ]
+    if [ -d $dotfiles/$file ] && [ -e ~/.$file ]
     then
-        echo "will not recreate symlink for directory $file"
+        echo "will not recreate symlink for directory .$file"
     else
         ln -s$force $dotfiles/$file ~/.$file
     fi
