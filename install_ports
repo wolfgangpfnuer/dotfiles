@@ -6,6 +6,7 @@ then
     sudo port install \
     iTerm2 `# better terminal` \
     curl `# call url` \
+    bash `# newer bash` \
     git-core +bash_completion `# git with autocompletion` \
     git-devbliss `# devbliss git-extensions` \
     htop `# show running process (human readable)` \

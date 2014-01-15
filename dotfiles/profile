@@ -6,6 +6,7 @@ export MAPPING_SIGN_KEY=~/fe.der
 alias vim="mvim -v"
 alias vi='vim'
 alias ssh="ssh -o ServerAliveInterval=60"
+shopt -s globstar # allow **/*.py to work
 
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=100000                   # big big history
