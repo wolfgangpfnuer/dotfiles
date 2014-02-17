@@ -2,7 +2,7 @@
 
 if [ -x /opt/local/bin/port ]
 then
-
+    sudo port selfupdate
     sudo port install \
     iTerm2 `# better terminal` \
     curl `# call url` \
@@ -33,6 +33,7 @@ then
 
     sudo port select python python27 # compatibility
     sudo port select ipython ipython33
+    sudo port upgrade outdated
 else
     macports_pkg=MacPorts-2.2.1-10.9-Mavericks.pkg
     open https://distfiles.macports.org/MacPorts/$macports_pkg
