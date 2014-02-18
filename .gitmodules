@@ -7,9 +7,6 @@
 [submodule "bash_completion/fabric-bash-autocompletion"]
 	path = bash_completion/fabric-bash-autocompletion
 	url = https://github.com/marcelor/fabric-bash-autocompletion
-[submodule "bash_completion/git"]
-	path = bash_completion/git
-	url = https://github.com/git/git
 [submodule "bash_completion/vagrant-bash-completion"]
 	path = bash_completion/vagrant-bash-completion
 	url = git@github.com:kura/vagrant-bash-completion
