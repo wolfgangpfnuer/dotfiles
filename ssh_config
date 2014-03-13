@@ -12,5 +12,5 @@ Host jenkins-slave
   Hostname d-12.spreegle.de
 
 Host jenkins-master
-  Hostname d-v131.spreegle.de
+  Hostname jenkins.devbliss.com
   User jenkins
