@@ -1,0 +1,16 @@
+Host *
+  ControlPath ~/.ssh/master-%l-%r@%h:%p
+  ControlMaster auto
+  Protocol 2
+  ServerAliveInterval 60
+
+Host deb
+  Hostname deb.devbliss.com
+  User deb
+
+Host jenkins-slave
+  Hostname d-12.spreegle.de
+
+Host jenkins-master
+  Hostname d-v131.spreegle.de
+  User jenkins
