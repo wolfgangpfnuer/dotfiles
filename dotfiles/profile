@@ -3,8 +3,6 @@ export LIBRARY_PATH=/opt/local/lib
 export EDITOR='mvim -v -f'
 export MAVEN_OPTS=-Xmx1024m
 export MAPPING_SIGN_KEY=~/fe.der
-alias vim="mvim -v"
-alias vi='vim'
 shopt -s globstar # allow **/*.py to work
 
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
