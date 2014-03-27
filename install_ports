@@ -29,6 +29,7 @@ then
     openssl `# newer openssl` \
     readline `# commandline editing` \
     ctags `# exuberant ctags` \
+    jq `# json parser for bash` \
     puppet `# puppet`
 
     sudo port select python python27 # compatibility
