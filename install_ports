@@ -13,10 +13,10 @@ then
     python27 `# python 2.7` \
     py27-pip `# python 2.7 package manager` \
     py27-setuptools `# easy_install` \
-    python33 `# python 3.3` \
-    py33-setuptools `# easy_install` \
-    py33-pip `# python 3.3 package manager` \
-    py33-ipython `# interactive python` \
+    python34 `# python 3.4` \
+    py34-setuptools `# easy_install` \
+    py34-pip `# python 3.4 package manager` \
+    py34-ipython `# interactive python` \
     ruby `# programming language` \
     rb19-bundler `# ruby package manager` \
     rsync `# sync files with remote location` \
@@ -33,8 +33,11 @@ then
     puppet `# puppet`
 
     sudo port select python python27 # compatibility
-    sudo port select ipython ipython33
     sudo port upgrade outdated
+    sudo port uninstall inactive
+    while true; do
+        sudo port uninstall leaves || break
+    done
 else
     macports_pkg=MacPorts-2.2.1-10.9-Mavericks.pkg
     open https://distfiles.macports.org/MacPorts/$macports_pkg
