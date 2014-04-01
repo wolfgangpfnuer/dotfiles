@@ -11,3 +11,11 @@ let g:syntastic_php_phpcs_args='--report=csv --standard=Devbliss'
 let g:syntastic_puppet_puppetlint_args='--no-80chars-check'
 let g:syntastic_puppet_puppet_args='--ignoreimport'
 let g:syntastic_php_phpmd_args='~/dotfiles/phpcsmd_rulesets/DevblissMessDetectorRuleSet.xml'
+
+" Highlight inaccurately (so its fast)
+set ttyfast
+set lazyredraw
+" http://stackoverflow.com/questions/4775605/vim-syntax-highlight-improve-performance
+set nocursorcolumn
+set nocursorline
+syntax sync minlines=256
