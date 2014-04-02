@@ -1,4 +1,2 @@
 let g:spf13_no_fastTabs=1
 let g:spf13_leader='\'
-Bundle 'joonty/vdebug.git'
-
