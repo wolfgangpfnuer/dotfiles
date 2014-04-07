@@ -30,6 +30,8 @@ then
     readline `# commandline editing` \
     ctags `# exuberant ctags` \
     jq `# json parser for bash` \
+    go `# google go` \
+    mercurial ` # mercurial VCS` \
     puppet `# puppet`
 
     sudo port select python python27 # compatibility

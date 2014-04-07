@@ -19,5 +19,4 @@ set nocursorcolumn
 set nocursorline
 syntax sync minlines=256
 
-let g:go_disable_autoinstall=1
 let g:snips_author = 'Wolfgang Pfnür <wolfgangpfnuer@gmail.com>'
