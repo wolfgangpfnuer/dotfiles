@@ -14,3 +14,7 @@ Host jenkins-slave
 Host jenkins-master
   Hostname jenkins.devbliss.com
   User jenkins
+
+Host github
+  Hostname github.com
+  User git
