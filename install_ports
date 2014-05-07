@@ -32,7 +32,8 @@ then
     jq `# json parser for bash` \
     go `# google go` \
     mercurial ` # mercurial VCS` \
-    puppet `# puppet`
+    puppet `# puppet` \
+    p5-app-ack `# ack`
 
     sudo port select python python27 # compatibility
     sudo port upgrade outdated
