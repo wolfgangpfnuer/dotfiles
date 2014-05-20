@@ -6,4 +6,5 @@ pexpect `# remote-control interactive bash processes from python` \
 sudo pip-3.4 install --upgrade \
 httpie `# like curl but with json support` \
 flake8 `# pep8 and complexity` \
-autopep8 `# autocorrect pep8 errors`
+autopep8 `# autocorrect pep8 errors` \
+invoke `# the non-ssh part of fabric 2`
