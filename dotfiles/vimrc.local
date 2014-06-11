@@ -20,3 +20,4 @@ set nocursorline
 syntax sync minlines=256
 
 let g:snips_author = 'Wolfgang Pfnür <wolfgangpfnuer@gmail.com>'
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
