@@ -8,7 +8,6 @@ then
     curl `# call url` \
     bash `# newer bash` \
     git-core +bash_completion `# git with autocompletion` \
-    git-devbliss `# devbliss git-extensions` \
     htop `# show running process (human readable)` \
     python27 `# python 2.7` \
     py27-pip `# python 2.7 package manager` \

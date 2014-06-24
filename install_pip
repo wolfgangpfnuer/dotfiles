@@ -7,4 +7,5 @@ sudo pip-3.4 install --upgrade \
 httpie `# like curl but with json support` \
 flake8 `# pep8 and complexity` \
 autopep8 `# autocorrect pep8 errors` \
-invoke `# the non-ssh part of fabric 2`
+invoke `# the non-ssh part of fabric 2` \
+git+git://github.com/devbliss/git-devbliss.git `# git-devbliss from github`

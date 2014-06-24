@@ -1,6 +1,7 @@
 export GOROOT=/opt/local/go
 export GOPATH=$HOME/go/packages
-export PATH=.:~/dotfiles/bin:~/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin:/Users/wpfnuer/Library/Python/2.7/bin:$GOPATH/bin
+export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin
+export PATH=.:~/dotfiles/bin:~/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$GOPATH/bin
 export LIBRARY_PATH=/opt/local/lib
 export EDITOR='mvim -v -f'
 export MAVEN_OPTS=-Xmx1024m
