@@ -11,14 +11,6 @@ let g:syntastic_puppet_puppetlint_args='--no-80chars-check'
 let g:syntastic_puppet_puppet_args='--ignoreimport'
 let g:syntastic_php_phpmd_args='~/dotfiles/phpcsmd_rulesets/DevblissMessDetectorRuleSet.xml'
 
-" Highlight inaccurately (so its fast)
-set ttyfast
-set lazyredraw
-" http://stackoverflow.com/questions/4775605/vim-syntax-highlight-improve-performance
-set nocursorcolumn
-set nocursorline
-syntax sync minlines=256
-
 let g:snips_author = 'Wolfgang Pfnür <wolfgangpfnuer@gmail.com>'
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 nnoremap <silent> <ESC>OA <Nop>
