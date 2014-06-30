@@ -19,6 +19,7 @@ brew install \
     ctags `# exuberant ctags` \
     jq `# json parser for bash` \
     go `# google go` \
+    mercurial `# vcs` \
     ack `# ack`
 
 brew update
