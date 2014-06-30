@@ -1,0 +1,25 @@
+#! /bin/sh
+
+brew update
+brew install \
+    curl `# call url` \
+    bash `# newer bash` \
+    git `# git with autocompletion` \
+    htop `# show running process (human readable)` \
+    python `# python 2.7` \
+    python3 `# python 3.4` \
+    ruby `# programming language` \
+    tree `# show content of directory as tree` \
+    wget `# download` \
+    ngrep `# network grep` \
+    macvim --override-system-vim --with-lua --with-python3 --withluajit `# vi with gui` \
+    neovim \
+    openssl `# newer openssl` \
+    readline `# commandline editing` \
+    ctags `# exuberant ctags` \
+    jq `# json parser for bash` \
+    go `# google go` \
+    ack `# ack`
+
+brew update
+brew cleanup

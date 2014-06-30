@@ -1,6 +1,6 @@
 export GOROOT=/opt/local/go
 export GOPATH=$HOME/go/packages
-export PATH=.:~/dotfiles/bin:~/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin:$GOPATH/bin
+export PATH=.:~/dotfiles/bin:~/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin:$GOPATH/bin
 export LIBRARY_PATH=/opt/local/lib
 export EDITOR='mvim -v -f'
 export MAVEN_OPTS=-Xmx1024m
@@ -29,4 +29,7 @@ source ~/jura_ec2_vars
 for f in /etc/bash_completion.d/*; do
    source $f
 done
-source /opt/local/etc/profile.d/bash_completion.sh
+for f in /usr/local/etc/bash_completion.d/*; do
+   source $f
+done
+

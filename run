@@ -5,9 +5,9 @@ cd powerline
 cd -
 ./osx
 ./create_symlinks
-./install_ports
-echo '/opt/local/bin/bash' | sudo tee /etc/shells
-chsh -s /opt/local/bin/bash
+./install_brew
+echo '/usr/local/bin/bash' | sudo tee /etc/shells
+chsh -s /usr/local/bin/bash
 ./install_gem
 ./install_pip
 ./install_phpcsmd
