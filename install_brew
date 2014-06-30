@@ -12,7 +12,7 @@ brew install \
     tree `# show content of directory as tree` \
     wget `# download` \
     ngrep `# network grep` \
-    macvim --override-system-vim --with-lua --with-python3 --withluajit `# vi with gui` \
+    macvim --override-system-vim --with-lua --withluajit `# vi with gui` \
     neovim \
     openssl `# newer openssl` \
     readline `# commandline editing` \
