@@ -14,8 +14,9 @@ shopt -s histappend                      # append to history, don't overwrite it
 shopt -s histreedit # reedit a history substitution line if it failed
 shopt -s histverify # edit a recalled history line before executing
 
-# Save and reload the history after each command finishes
 . ~/dotfiles/powerline/powerline/bindings/bash/powerline.sh
+
+# Save and reload the history after each command finishes
 export PROMPT_COMMAND="$PROMPT_COMMAND; history -a; history -c; history -r"
 
 
