@@ -9,4 +9,5 @@ flake8 `# pep8 and complexity` \
 autopep8 `# autocorrect pep8 errors` \
 invoke `# the non-ssh part of fabric 2` \
 git-devbliss `# git-devbliss from github` \
+jedi `# autocompletion helper` \
 ipython `# interactive python` 
