@@ -8,4 +8,5 @@ httpie `# like curl but with json support` \
 flake8 `# pep8 and complexity` \
 autopep8 `# autocorrect pep8 errors` \
 invoke `# the non-ssh part of fabric 2` \
-git-devbliss `# git-devbliss from github`
+git-devbliss `# git-devbliss from github` \
+ipython `# interactive python` 
