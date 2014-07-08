@@ -30,7 +30,7 @@ source ~/bash_secrets
 for f in /etc/bash_completion.d/*; do
    source $f
 done
-for f in /usr/local/etc/bash_completion.d/*; do
-   source $f
-done
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi

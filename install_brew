@@ -4,6 +4,7 @@ brew update
 brew install \
     curl `# call url` \
     bash `# newer bash` \
+    bash-completion `# autocompletion` \
     git `# git with autocompletion` \
     htop `# show running process (human readable)` \
     python `# python 2.7` \
