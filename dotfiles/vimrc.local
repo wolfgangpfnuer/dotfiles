@@ -10,6 +10,7 @@ let g:syntastic_php_phpcs_args='--report=csv --standard=Devbliss'
 let g:syntastic_puppet_puppetlint_args='--no-80chars-check'
 let g:syntastic_puppet_puppet_args='--ignoreimport'
 let g:syntastic_php_phpmd_args='~/dotfiles/phpcsmd_rulesets/DevblissMessDetectorRuleSet.xml'
+let g:pymode_lint=0
 
 let g:snips_author = 'Wolfgang Pfnür <wolfgangpfnuer@gmail.com>'
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
