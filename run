@@ -1,15 +1,21 @@
+./osx
+
+./create_symlinks
+
+./install_brew
+./install_gem
+./install_pip
+./install_phpcsmd
+
 cp powerline-fonts/Menlo/Menlo\ Regular\ for\ Powerline.ttf /Library/Fonts
 cd powerline
 ./setup.py build
 ./setup.py install --user
 cd -
-./osx
-./create_symlinks
-./install_brew
+
 echo '/usr/local/bin/bash' | sudo tee /etc/shells
 chsh -s /usr/local/bin/bash
-./install_gem
-./install_pip
-./install_phpcsmd
+
 mkdir -p ~/go/packages
+
 sh <(curl https://j.mp/spf13-vim3 -L)
