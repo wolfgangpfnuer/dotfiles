@@ -1,0 +1,24 @@
+source ~/.profile
+
+shopt -s globstar # allow **/*.py to work
+
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000                   # big big history
+export HISTFILESIZE=100000               # big big history
+shopt -s histappend                      # append to history, don't overwrite it
+shopt -s histreedit # reedit a history substitution line if it failed
+shopt -s histverify # edit a recalled history line before executing
+
+. ~/dotfiles/powerline/powerline/bindings/bash/powerline.sh
+
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="$PROMPT_COMMAND; history -a; history -c; history -r"
+
+
+for f in /etc/bash_completion.d/*; do
+   source $f
+done
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
