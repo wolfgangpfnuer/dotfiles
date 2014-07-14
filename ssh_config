@@ -18,3 +18,6 @@ Host jenkins-master
 Host github
   Hostname github.com
   User git
+
+Host blissdoc
+    Hostname d-v140.spreegle.de
