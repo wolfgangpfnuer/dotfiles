@@ -1,2 +1,1 @@
-Bundle 'davidhalter/jedi-vim'
 UnBundle 'spf13/vim-autoclose'

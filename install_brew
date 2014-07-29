@@ -1,27 +1,29 @@
 #! /bin/sh
 
 brew update
+brew upgrade
 brew install \
-    curl `# call url` \
-    bash `# newer bash` \
-    bash-completion `# autocompletion` \
-    git `# git with autocompletion` \
-    htop `# show running process (human readable)` \
-    python `# python 2.7` \
-    python3 `# python 3.4` \
-    ruby `# programming language` \
-    tree `# show content of directory as tree` \
-    wget `# download` \
-    ngrep `# network grep` \
-    macvim --override-system-vim --with-lua --withluajit `# vi with gui` \
-    neovim \
-    openssl `# newer openssl` \
-    readline `# commandline editing` \
-    ctags `# exuberant ctags` \
-    jq `# json parser for bash` \
-    go `# google go` \
-    mercurial `# vcs` \
-    ack `# ack`
+    curl \
+    bash \
+    bash-completion \
+    git \
+    htop \
+    python \
+    python3 \
+    ruby \
+    tree \
+    wget \
+    ngrep \
+    macvim --override-system-vim --with-lua --withluajit \
+    openssl \
+    readline \
+    ctags \
+    jq \
+    go \
+    mercurial \
+    ack \
+    docker
 
+brew install --HEAD neovim
 brew update
 brew cleanup
