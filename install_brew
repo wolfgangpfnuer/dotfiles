@@ -24,6 +24,6 @@ brew install \
     ack \
     docker
 
-brew install --HEAD neovim
+brew reinstall --HEAD https://raw.github.com/neovim/neovim/master/neovim.rb
 brew update
 brew cleanup
