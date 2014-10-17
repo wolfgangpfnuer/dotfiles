@@ -12,10 +12,11 @@ Host bingo
   Hostname bingo.devbliss.com
 
 Host jenkins-slave
-  Hostname d-12.spreegle.de
-
-Host jenkins-slave-new
   Hostname d-13.spreegle.de
+
+Host d-14
+  Hostname d-14.spreegle.de
+  User root
 
 Host jenkins-master
   Hostname jenkins.devbliss.com
