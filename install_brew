@@ -1,29 +1,43 @@
 #! /bin/sh
 
-brew update
-brew upgrade
-brew install \
-    curl \
-    bash \
-    bash-completion \
-    git \
-    htop \
-    python \
-    python3 \
-    ruby \
-    tree \
-    wget \
-    ngrep \
-    macvim --override-system-vim --with-lua --withluajit \
-    openssl \
-    readline \
-    ctags \
-    jq \
-    go \
-    mercurial \
-    ack \
-    docker
+programs="
+curl
+bash
+bash-completion
+git
+htop-osx
+python
+python3
+ruby
+tree
+wget
+ngrep
+openssl
+readline
+ctags
+jq
+go
+mercurial
+ack
+docker
+watch
+"
+head_programs="
+neovim
+"
 
-brew reinstall --HEAD https://raw.github.com/neovim/neovim/master/neovim.rb
 brew update
+grep 'neovim/homebrew-neovim' /usr/local/Library/Taps/neovim/homebrew-neovim/.git/config > /dev/null || brew tap neovim/homebrew-neovim
+install=$(echo "$programs" | grep -v "$(brew list | sed 's/\(.*\)/^\1$/g')")
+if [ $install ]
+then
+    brew install $installa
+fi
+install_head=$(echo "$head_programs" | grep -v "$(brew list | sed 's/\(.*\)/^\1$/g')")
+if $install_head
+then
+    brew install --HEAD $install_head
+fi
+brew list | grep macvim > /dev/null || brew install macvim --override-system-vim --with-lua --withluajit
+brew upgrade
 brew cleanup
