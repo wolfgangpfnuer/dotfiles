@@ -34,7 +34,7 @@ then
     brew install $installa
 fi
 install_head=$(echo "$head_programs" | grep -v "$(brew list | sed 's/\(.*\)/^\1$/g')")
-if $install_head
+if [ $install_head ]
 then
     brew install --HEAD $install_head
 fi
