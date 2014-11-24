@@ -8,14 +8,18 @@ Host deb
   Hostname deb.devbliss.com
   User deb
 
-Host bingo
-  Hostname bingo.devbliss.com
-
 Host jenkins-slave
   Hostname d-13.spreegle.de
 
 Host d-14
   Hostname d-14.spreegle.de
+  User root
+
+Host bingo
+  Hostname d-v227-xen
+
+Host bingo-lxc
+  Hostname d-v226-xen
   User root
 
 Host jenkins-master

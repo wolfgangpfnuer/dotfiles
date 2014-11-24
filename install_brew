@@ -31,7 +31,7 @@ grep 'neovim/homebrew-neovim' /usr/local/Library/Taps/neovim/homebrew-neovim/.gi
 install=$(echo "$programs" | grep -v "$(brew list | sed 's/\(.*\)/^\1$/g')")
 if [ $install ]
 then
-    brew install $installa
+    brew install $install
 fi
 install_head=$(echo "$head_programs" | grep -v "$(brew list | sed 's/\(.*\)/^\1$/g')")
 if [ $install_head ]
