@@ -22,6 +22,12 @@ Host bingo-lxc
   Hostname d-v226-xen
   User root
 
+Host jura-bingo
+  Hostname d-v231-xen
+
+Host jura-bingo-lxc
+  Hostname d-v230-xen
+
 Host jenkins-master
   Hostname jenkins.devbliss.com
   User jenkins
