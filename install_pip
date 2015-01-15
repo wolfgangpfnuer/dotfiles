@@ -1,3 +1,5 @@
+sudo easy_install pip
+sudo easy_install-3.4 pip
 sudo pip2.7 install --upgrade \
 awscli `# amazon webservices command line interface` \
 fabric `# tool for deployment` \

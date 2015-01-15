@@ -1,5 +1,9 @@
 #! /bin/sh
 
+which brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew cask cleanup || brew install caskroom/cask/brew-cask
+
 programs="
 curl
 bash
@@ -26,18 +30,19 @@ head_programs="
 neovim
 "
 
+casks="
+iterm2
+skype
+vagrant
+virtualbox
+seil
+"
+
 brew update
 grep 'neovim/homebrew-neovim' /usr/local/Library/Taps/neovim/homebrew-neovim/.git/config > /dev/null || brew tap neovim/homebrew-neovim
-install=$(echo "$programs" | grep -v "$(brew list | sed 's/\(.*\)/^\1$/g')")
-if [ $install ]
-then
-    brew install $install
-fi
-install_head=$(echo "$head_programs" | grep -v "$(brew list | sed 's/\(.*\)/^\1$/g')")
-if [ $install_head ]
-then
-    brew install --HEAD $install_head
-fi
+brew install $programs 2>&1 | grep -v 'Warning:.*already installed'
+brew install --HEAD $head_programs 2>&1 | grep -v 'Warning:.*already installed'
+brew cask install $casks 2>&1 | grep -v 'Warning:.*already installed'
 brew list | grep macvim > /dev/null || brew install macvim --override-system-vim --with-lua --withluajit
 brew upgrade
 brew cleanup
