@@ -22,6 +22,11 @@ sudo scutil --set HostName "$computername"
 sudo scutil --set LocalHostName "$hostname"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$hostname"
 
+# Add Terminal Shortcuts
+
+defaults write com.apple.Terminal NSUserKeyEquivalents -dict-add "Show Next Tab" '@\U2192'
+defaults write com.apple.Terminal NSUserKeyEquivalents -dict-add "Show Previous Tab" '@\U2190'
+
 # Menu bar: show remaining battery time (on pre-10.8); hide percentage
 defaults write com.apple.menuextra.battery ShowPercent -string "NO"
 defaults write com.apple.menuextra.battery ShowTime -string "YES"
