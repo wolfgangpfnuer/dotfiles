@@ -31,14 +31,11 @@ neovim
 "
 
 casks="
-iterm2
-totalterminal
 flashlight
 skype
 vagrant
 virtualbox
 seil
-tunnelblick
 "
 
 brew update
