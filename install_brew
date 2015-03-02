@@ -37,6 +37,7 @@ skype
 vagrant
 virtualbox
 seil
+iterm2
 "
 
 brew update
