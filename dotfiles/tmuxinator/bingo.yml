@@ -23,15 +23,18 @@ root: ~/
 
 startup_window: editor
 windows:
-  - vagrant:
-     - cd bingo-vagrant
-     - vagrant up
-     - vagrant ssh
-  - debug:
-    - cd bingo
-    - make debug
-  - test:
-    - cd bingo
-    - make test
+  - run:
+      layout: 8178,272x73,0,0{160x73,0,0,0,111x73,161,0[111x36,161,0,2,111x36,161,37,3]}
+      panes:
+          - debug:
+            - cd bingo
+            - make debug
+          - vagrant:
+             - cd bingo-vagrant
+             - vagrant up
+             - vagrant ssh
+          - test:
+            - cd bingo
+            - make test
   - editor:
      - cd bingo
