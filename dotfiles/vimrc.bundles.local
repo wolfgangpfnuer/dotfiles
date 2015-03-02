@@ -1,1 +1,2 @@
 UnBundle 'spf13/vim-autoclose'
+Bundle 'christoomey/vim-tmux-navigator'
