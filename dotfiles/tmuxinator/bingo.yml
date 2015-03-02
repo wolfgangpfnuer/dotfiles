@@ -28,13 +28,17 @@ windows:
       panes:
           - debug:
             - cd bingo
+            - clear
             - make debug
           - vagrant:
              - cd bingo-vagrant
              - vagrant up
+             - clear
              - vagrant ssh
           - test:
             - cd bingo
+            - clear
             - make test
   - editor:
      - cd bingo
+     - clear
