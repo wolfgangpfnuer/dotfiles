@@ -25,6 +25,7 @@ mercurial
 ack
 docker
 watch
+tmux
 "
 head_programs="
 neovim
