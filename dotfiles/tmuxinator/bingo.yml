@@ -26,22 +26,22 @@ windows:
   - editor:
      - cd bingo
      - clear
+  - test:
+     - cd bingo
+     - clear
+     - make test
   - local:
       layout: 8178,272x73,0,0{160x73,0,0,0,111x73,161,0[111x36,161,0,2,111x36,161,37,3]}
       panes:
-          - debug:
-            - cd bingo
-            - clear
-            - make debug
           - vagrant:
              - cd bingo-vagrant
              - vagrant up
              - clear
              - vagrant ssh
-          - test:
+          - debug:
             - cd bingo
             - clear
-            - make test
+            - make debug
   - staging:
       layout: even-horizontal
       panes:
