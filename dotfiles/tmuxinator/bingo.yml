@@ -23,7 +23,10 @@ root: ~/
 
 startup_window: editor
 windows:
-  - run:
+  - editor:
+     - cd bingo
+     - clear
+  - local:
       layout: 8178,272x73,0,0{160x73,0,0,0,111x73,161,0[111x36,161,0,2,111x36,161,37,3]}
       panes:
           - debug:
@@ -39,6 +42,26 @@ windows:
             - cd bingo
             - clear
             - make test
-  - editor:
-     - cd bingo
-     - clear
+  - staging:
+      layout: even-horizontal
+      panes:
+          - lxc:
+            - ssh bingo-lxc
+            - clear
+            - lxc-ls --fancy
+          - log:
+             - ssh bingo
+             - clear
+             - tail -f /var/log/bingo/*.log
+  - jura:
+      layout: even-horizontal
+      panes:
+          - lxc:
+            - ssh jura-bingo-lxc
+            - sudo su
+            - clear
+            - lxc-ls --fancy
+          - log:
+             - ssh jura-bingo
+             - clear
+             - tail -f /var/log/bingo/*.log
