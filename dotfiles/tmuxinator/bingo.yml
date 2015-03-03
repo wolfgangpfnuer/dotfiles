@@ -33,7 +33,7 @@ windows:
              - clear
              - make test
   - local:
-      layout: even-horizontal
+      layout: main-vertical
       panes:
           - vagrant:
              - cd bingo-vagrant
@@ -45,25 +45,33 @@ windows:
             - clear
             - make debug
   - staging:
-      layout: even-horizontal
+      layout: main-vertical
       panes:
           - lxc:
             - ssh bingo-lxc
             - clear
-            - lxc-ls --fancy
+            - watch lxc-ls --fancy
           - log:
              - ssh bingo
              - clear
-             - tail -f /var/log/bingo/*.log
+             - tail -f /var/log/bingo/!(chemist|tumbler).log
+          - deploy-log:
+             - ssh bingo
+             - clear
+             - tail -f /var/log/bingo/{chemist,tumbler}.log
   - jura:
-      layout: even-horizontal
+      layout: main-vertical
       panes:
           - lxc:
             - ssh jura-bingo-lxc
             - sudo su
             - clear
-            - lxc-ls --fancy
+            - watch lxc-ls --fancy
           - log:
-             - ssh jura-bingo
+             - ssh bingo
              - clear
-             - tail -f /var/log/bingo/*.log
+             - tail -f /var/log/bingo/!(chemist|tumbler).log
+          - deploy-log:
+             - ssh bingo
+             - clear
+             - tail -f /var/log/bingo/{chemist,tumbler}.log
