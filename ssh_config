@@ -1,6 +1,4 @@
 Host *
-  ControlPath ~/.ssh/master-%l-%r@%h:%p
-  ControlMaster auto
   Protocol 2
   ServerAliveInterval 60
 
