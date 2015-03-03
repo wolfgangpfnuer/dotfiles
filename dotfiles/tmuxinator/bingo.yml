@@ -21,17 +21,19 @@ root: ~/
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
 # startup_window: logs
 
-startup_window: editor
 windows:
-  - editor:
-     - cd bingo
-     - clear
-  - test:
-     - cd bingo
-     - clear
-     - make test
+  - work:
+      layout: even-horizontal
+      panes:
+          - editor:
+             - cd bingo
+             - clear
+          - test:
+             - cd bingo
+             - clear
+             - make test
   - local:
-      layout: 8178,272x73,0,0{160x73,0,0,0,111x73,161,0[111x36,161,0,2,111x36,161,37,3]}
+      layout: even-horizontal
       panes:
           - vagrant:
              - cd bingo-vagrant
