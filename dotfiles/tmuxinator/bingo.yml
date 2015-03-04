@@ -48,30 +48,30 @@ windows:
       layout: main-vertical
       panes:
           - lxc:
-            - ssh bingo-lxc
+            - autossh -M 0 -t bingo-lxc "screen -qDR wpfnuer"
             - clear
             - watch lxc-ls --fancy
           - log:
-             - ssh bingo
+             - autossh -M 0 -t bingo "screen -qDR wpfnuer_log"
              - clear
              - tail -f /var/log/bingo/!(chemist|tumbler).log
           - deploy-log:
-             - ssh bingo
+             - autossh -M 0 -t bingo "screen -qDR wpfnuer_deploy"
              - clear
              - tail -f /var/log/bingo/{chemist,tumbler}.log
   - jura:
       layout: main-vertical
       panes:
           - lxc:
-            - ssh jura-bingo-lxc
+            - autossh -M 0 -t jura-bingo-lxc "screen -qDR wpfnuer"
             - sudo su
             - clear
             - watch lxc-ls --fancy
           - log:
-             - ssh jura-bingo
+             - autossh -M 0 -t jura-bingo "screen -qDR wpfnuer_log"
              - clear
              - tail -f /var/log/bingo/!(chemist|tumbler).log
           - deploy-log:
-             - ssh jura-bingo
+             - autossh -M 0 -t jura-bingo "screen -qDR wpfnuer_deploy"
              - clear
              - tail -f /var/log/bingo/{chemist,tumbler}.log
