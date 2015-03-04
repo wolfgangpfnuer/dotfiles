@@ -1,6 +1,7 @@
 Host *
   Protocol 2
   ServerAliveInterval 60
+  ServerAliveCountMax 5
 
 Host deb
   Hostname deb.devbliss.com

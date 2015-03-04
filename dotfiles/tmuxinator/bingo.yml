@@ -68,10 +68,10 @@ windows:
             - clear
             - watch lxc-ls --fancy
           - log:
-             - ssh bingo
+             - ssh jura-bingo
              - clear
              - tail -f /var/log/bingo/!(chemist|tumbler).log
           - deploy-log:
-             - ssh bingo
+             - ssh jura-bingo
              - clear
              - tail -f /var/log/bingo/{chemist,tumbler}.log
