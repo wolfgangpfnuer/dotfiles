@@ -44,6 +44,15 @@ windows:
             - cd bingo
             - clear
             - make debug
+  - salt:
+      layout: even-horizontal
+      panes:
+          - bingo-salt:
+             - cd bingo-salt
+             - clear
+          - salt-states:
+             - cd bingo-salt/salt/salt-states
+             - clear
   - staging:
       layout: main-vertical
       panes:
