@@ -1,4 +1,5 @@
--- LAYOUT
+-- constants
+local applications = {"Google Chrome", "Mail", "Calendar", "Skype", "iTerm"}
 local laptopScreen = "Color LCD"
 local windowLayout = {
     {"Google Chrome",  nil,          laptopScreen, hs.layout.left50,    nil, nil},
@@ -8,18 +9,20 @@ local windowLayout = {
     {"iTerm",   nil,          laptopScreen, hs.layout.maximized, nil, nil},
 }
 
+
+
+
+-- PUT ALL WINDOWS WHERE THEY BELONG
 function applyLayout()
     hs.layout.apply(windowLayout)
     for _, window in pairs(hs.window.allWindows()) do
         if (window:application():title() == "iTerm") then
-            window:toggleFullScreen(true)
+            if not window:isFullScreen() then
+                window:toggleFullScreen()
+            end
         end
     end
 end
-
-
-local applications = {"Google Chrome", "Mail", "Calendar", "Skype", "iTerm"}
-
 
 
 -- PUT ALL WINDOWS WHERE THEY BELONG WHEN AN APPLICATION LAUNCHES
@@ -71,4 +74,12 @@ function reloadConfig(files)
     end
 end
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+
+
+-- HOTKEY REPOSITION WINDOWS
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
+  applyLayout()
+end)
+
+
 hs.alert.show("Config loaded")
