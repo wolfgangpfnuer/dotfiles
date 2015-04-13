@@ -38,6 +38,7 @@ vagrant
 virtualbox
 seil
 iterm2
+hammerspoon
 "
 
 brew update
