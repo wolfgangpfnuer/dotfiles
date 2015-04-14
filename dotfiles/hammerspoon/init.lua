@@ -83,3 +83,31 @@ end)
 
 
 hs.alert.show("Config loaded")
+
+-----------------------------------------------
+-- {"ctrl"} i to show window hints
+-----------------------------------------------
+hs.hints.style = 'vimperator'
+hs.hotkey.bind({"ctrl"}, "i", function()
+    hs.hints.windowHints()
+end)
+
+-----------------------------------------------
+-- {"ctrl"} hjkl to switch window focus
+-----------------------------------------------
+
+hs.hotkey.bind({"ctrl"}, 'k', function()
+    hs.window.focusedWindow():focusWindowNorth()
+end)
+
+hs.hotkey.bind({"ctrl"}, 'j', function()
+    hs.window.focusedWindow():focusWindowSouth()
+end)
+
+hs.hotkey.bind({"ctrl"}, 'l', function()
+    hs.window.focusedWindow():focusWindowEast()
+end)
+
+hs.hotkey.bind({"ctrl"}, 'h', function()
+    hs.window.focusedWindow():focusWindowWest()
+end)
