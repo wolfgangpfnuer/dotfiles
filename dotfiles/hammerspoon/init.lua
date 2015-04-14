@@ -10,6 +10,41 @@ local windowLayout = {
 }
 
 
+switchableHotkeys = {}
+
+-----------------------------------------------
+-- {"ctrl"} i to show window hints
+-----------------------------------------------
+hs.hints.style = 'vimperator'
+table.insert(switchableHotkeys, hs.hotkey.bind({"ctrl"}, "i", function()
+    hs.hints.windowHints()
+end))
+
+-----------------------------------------------
+-- {"ctrl"} hjkl to switch window focus
+-----------------------------------------------
+
+table.insert(switchableHotkeys, hs.hotkey.bind({"ctrl"}, 'k', function()
+    hs.window.focusedWindow():focusWindowNorth()
+end))
+
+table.insert(switchableHotkeys, hs.hotkey.bind({"ctrl"}, 'j', function()
+    hs.window.focusedWindow():focusWindowSouth()
+end))
+
+table.insert(switchableHotkeys, hs.hotkey.bind({"ctrl"}, 'l', function()
+    hs.window.focusedWindow():focusWindowEast()
+end))
+
+table.insert(switchableHotkeys, hs.hotkey.bind({"ctrl"}, 'h', function()
+    hs.window.focusedWindow():focusWindowWest()
+end))
+
+if (hs.window.focusedWindow():isFullScreen()) then
+    hs.fnutils.each(switchableHotkeys, function(hotkey)
+        hotkey:disable()
+    end)
+end
 
 
 -- PUT ALL WINDOWS WHERE THEY BELONG
@@ -25,12 +60,22 @@ function applyLayout()
 end
 
 
+
 -- PUT ALL WINDOWS WHERE THEY BELONG WHEN AN APPLICATION LAUNCHES
 function applicationWatcherFun(appName, eventType, appObject)
     if (eventType == hs.application.watcher.activated) then
         if (appName == "Finder") then
             -- Bring all Finder windows forward when one gets activated
             appObject:selectMenuItem({"Window", "Bring All to Front"})
+        end
+        if (appObject:focusedWindow():isFullScreen()) then
+            hs.fnutils.each(switchableHotkeys, function(hotkey)
+                hotkey:disable()
+            end)
+        else
+            hs.fnutils.each(switchableHotkeys, function(hotkey)
+                hotkey:enable()
+            end)
         end
     end
     if (eventType == hs.application.watcher.launching) then
@@ -82,32 +127,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
 end)
 
 
+
+
+
 hs.alert.show("Config loaded")
-
------------------------------------------------
--- {"ctrl"} i to show window hints
------------------------------------------------
-hs.hints.style = 'vimperator'
-hs.hotkey.bind({"ctrl"}, "i", function()
-    hs.hints.windowHints()
-end)
-
------------------------------------------------
--- {"ctrl"} hjkl to switch window focus
------------------------------------------------
-
-hs.hotkey.bind({"ctrl"}, 'k', function()
-    hs.window.focusedWindow():focusWindowNorth()
-end)
-
-hs.hotkey.bind({"ctrl"}, 'j', function()
-    hs.window.focusedWindow():focusWindowSouth()
-end)
-
-hs.hotkey.bind({"ctrl"}, 'l', function()
-    hs.window.focusedWindow():focusWindowEast()
-end)
-
-hs.hotkey.bind({"ctrl"}, 'h', function()
-    hs.window.focusedWindow():focusWindowWest()
-end)
