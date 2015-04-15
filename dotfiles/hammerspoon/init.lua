@@ -40,7 +40,7 @@ table.insert(switchableHotkeys, hs.hotkey.bind({"ctrl"}, 'h', function()
     hs.window.focusedWindow():focusWindowWest()
 end))
 
-if (hs.window.focusedWindow() and hs.window.focuesWindow():isFullScreen()) then
+if (hs.window.focusedWindow() and hs.window.focusedWindow():isFullScreen()) then
     hs.fnutils.each(switchableHotkeys, function(hotkey)
         hotkey:disable()
     end)
