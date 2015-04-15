@@ -40,7 +40,7 @@ table.insert(switchableHotkeys, hs.hotkey.bind({"ctrl"}, 'h', function()
     hs.window.focusedWindow():focusWindowWest()
 end))
 
-if (hs.window.focusedWindow():isFullScreen()) then
+if (hs.window.focusedWindow() and hs.window.focuesWindow():isFullScreen()) then
     hs.fnutils.each(switchableHotkeys, function(hotkey)
         hotkey:disable()
     end)
@@ -68,7 +68,7 @@ function applicationWatcherFun(appName, eventType, appObject)
             -- Bring all Finder windows forward when one gets activated
             appObject:selectMenuItem({"Window", "Bring All to Front"})
         end
-        if (appObject:focusedWindow():isFullScreen()) then
+        if (appObject and appObject:focusedWindow() and appObject:focusedWindow():isFullScreen()) then
             hs.fnutils.each(switchableHotkeys, function(hotkey)
                 hotkey:disable()
             end)
