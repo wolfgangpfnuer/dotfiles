@@ -105,14 +105,16 @@ screenWatcher:start()
 
 
 -- AUTOTEST BINGO ON CHANGES
-bingo_watcher = hs.pathwatcher.new(os.getenv("HOME") .. "/bingo/", function(files)
-    for _, file in pairs(files) do
-        if string.find(file, '.py') and not string.find(file, '.pyc') then
-            io.popen(os.getenv("SHELL").." -l -i -c 'tmux send -Rt 2 \"make test\" enter'", 'r')
-            return
+for _, service in pairs({"bingo", "tumbler", "corsa", "kino", "stoker", "chemist", "polis", "lib34", "minitel"}) do
+    hs.pathwatcher.new(os.getenv("HOME") .. "/bingo/" .. service, function(files)
+        for _, file in pairs(files) do
+            if string.find(file, '.py') and not string.find(file, '.pyc') then
+                io.popen(os.getenv("SHELL") .. " -l -i -c 'tmux send -Rt 2 \"make test-" .. service .. "\" enter'", 'r')
+                return
+            end
         end
-    end
-end):start()
+    end):start()
+end
 
 
 
