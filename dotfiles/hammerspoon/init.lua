@@ -57,6 +57,14 @@ function applyLayout()
             end
         end
     end
+
+    -- restart nexTab
+    for _, application in pairs(hs.application.runningApplications()) do
+        if (application:title() == 'nexTab') then
+            application:kill()
+            hs.application.launchOrFocus('nexTab')
+        end
+    end
 end
 
 
