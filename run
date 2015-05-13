@@ -6,7 +6,7 @@ sudo ./osx
 ./install_gem
 ./install_pip
 
-cp powerline-fonts/Menlo/Menlo\ Regular\ for\ Powerline.ttf /Library/Fonts
+cp powerline-fonts/*/*.{o,t}tf ~/Library/Fonts
 cd powerline
 ./setup.py build
 ./setup.py install --user
