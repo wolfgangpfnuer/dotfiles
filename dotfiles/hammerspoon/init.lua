@@ -113,7 +113,7 @@ screenWatcher:start()
 
 
 -- AUTOTEST BINGO ON CHANGES
-for _, service in pairs({"bingo", "tumbler", "corsa", "kino", "stoker", "chemist", "polis", "lib34", "minitel"}) do
+for _, service in pairs({"bingo", "tumbler", "corsa", "kino", "stoker", "chemist", "polis", "lib34", "minitel", "titanium", "frontend", "crane" }) do
     hs.pathwatcher.new(os.getenv("HOME") .. "/bingo/" .. service, function(files)
         for _, file in pairs(files) do
             if string.find(file, '.py') and not string.find(file, '.pyc') then

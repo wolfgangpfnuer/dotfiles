@@ -26,6 +26,7 @@ ack
 docker
 watch
 tmux
+npm
 "
 head_programs="
 neovim
