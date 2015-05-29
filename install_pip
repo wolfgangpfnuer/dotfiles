@@ -6,6 +6,7 @@ fabric `# tool for deployment` \
 pexpect `# remote-control interactive bash processes from python` \
 
 sudo pip3.4 install --upgrade \
+grip `# github flavored markdown preview` \
 powerline-status \
 httpie `# like curl but with json support` \
 flake8 `# pep8 and complexity` \

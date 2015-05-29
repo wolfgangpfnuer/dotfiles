@@ -58,6 +58,9 @@ function applyLayout()
         end
     end
 
+    -- stop powerline-daemon regularly
+    os.execute('pgrep -f powerline-daemon | xargs kill')
+
     -- restart nexTab
     for _, application in pairs(hs.application.runningApplications()) do
         if (application:title() == 'nexTab') then
