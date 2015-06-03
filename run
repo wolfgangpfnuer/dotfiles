@@ -2,9 +2,9 @@ sudo ./osx
 
 ./create_symlinks
 
-./install_brew
-./install_gem
-./install_pip
+./brew
+./gem
+./pip
 
 cp powerline-fonts/*/*.{o,t}tf ~/Library/Fonts
 cd powerline
