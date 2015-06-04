@@ -2,12 +2,11 @@
 
 which brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew cask cleanup || brew install caskroom/cask/brew-cask
-
 programs="
 curl
 bash
 bash-completion
+brew-cask
 git
 htop-osx
 python
@@ -24,6 +23,7 @@ go
 mercurial
 ack
 docker
+docker-machine
 watch
 tmux
 npm
@@ -43,10 +43,12 @@ hammerspoon
 "
 
 brew update
-grep 'neovim/homebrew-neovim' /usr/local/Library/Taps/neovim/homebrew-neovim/.git/config > /dev/null || brew tap neovim/homebrew-neovim
+test -d /usr/local/Library/Taps/caskroom/homebrew-cask || brew tap caskroom/homebrew-cask
+test -d /usr/local/Library/Taps/neovim/homebrew-neovim || brew tap neovim/homebrew-neovim
 brew install $programs 2>&1 | grep -v 'Warning:.*already installed'
 brew install --HEAD $head_programs 2>&1 | grep -v 'Warning:.*already installed'
 brew cask install $casks 2>&1 | grep -v 'Warning:.*already installed'
 brew list | grep macvim > /dev/null || brew install macvim --override-system-vim --with-lua --withluajit
 brew upgrade --all
 brew cleanup
+brew cask cleanup
