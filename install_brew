@@ -6,7 +6,7 @@ programs="
 curl
 bash
 bash-completion
-brew-cask
+/caskroom/cask/brew-cask
 git
 htop-osx
 python
@@ -29,7 +29,7 @@ tmux
 npm
 "
 head_programs="
-neovim
+neovim/neovim/neovim
 "
 
 casks="
@@ -43,8 +43,6 @@ hammerspoon
 "
 
 brew update
-test -d /usr/local/Library/Taps/caskroom/homebrew-cask || brew tap caskroom/homebrew-cask
-test -d /usr/local/Library/Taps/neovim/homebrew-neovim || brew tap neovim/homebrew-neovim
 brew install $programs 2>&1 | grep -v 'Warning:.*already installed'
 brew install --HEAD $head_programs 2>&1 | grep -v 'Warning:.*already installed'
 brew cask install $casks 2>&1 | grep -v 'Warning:.*already installed'
