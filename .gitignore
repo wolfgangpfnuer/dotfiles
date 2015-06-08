@@ -1,2 +1,5 @@
 dotfiles/ipython/profile_default/history.sqlite
 dotfiles/grip/cache-*
+
+dotfiles/config/*
+!dotfiles/config/powerline
