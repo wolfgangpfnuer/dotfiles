@@ -11,4 +11,6 @@ alias vi='vim'
 alias ls='ls -G'
 alias ll='ls -la'
 
+alias ed='ed -p:'
+
 source ~/bash_secrets
