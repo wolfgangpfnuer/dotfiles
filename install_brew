@@ -6,7 +6,7 @@ programs="
 curl
 bash
 bash-completion
-/caskroom/cask/brew-cask
+caskroom/cask/brew-cask
 git
 htop-osx
 python
