@@ -21,6 +21,5 @@ done
 sudo mkdir -p /etc/bash_completion.d
 sudo ln -s ~/dotfiles/bash_completion/fabric-bash-autocompletion/fab /etc/bash_completion.d/fab
 sudo ln -s ~/dotfiles/bash_completion/vagrant-bash-completion/vagrant /etc/bash_completion.d/vagrant
-sudo ln -s ~/dotfiles/ssh_config ~/.ssh/config
 mkdir -p ~/bin
 sudo ln -s /opt/local/bin/ack-5.12 ~/bin/ack
