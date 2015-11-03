@@ -2,6 +2,9 @@
 
 which brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+taps="
+homebrew/php
+"
 programs="
 reattach-to-user-namespace
 curl
@@ -25,16 +28,19 @@ mercurial
 ack
 docker
 docker-machine
+terminal-notifier
 watch
 tmux
 npm
+php56
+php56-xdebug
+composer
 "
 head_programs="
 neovim/neovim/neovim
 "
 
 casks="
-flashlight
 skype
 vagrant
 virtualbox
@@ -42,10 +48,13 @@ seil
 karabiner
 iterm2
 hammerspoon
+sequel-pro
+github-desktop
 chefdk
 "
 
 brew update
+brew tap $taps 2>&1 | grep -v 'Warning: Already tapped'
 brew install $programs 2>&1 | grep -v 'Warning:.*already installed'
 brew install --HEAD $head_programs 2>&1 | grep -v 'Warning:.*already installed'
 brew cask install $casks 2>&1 | grep -v 'Warning:.*already installed'

@@ -13,14 +13,20 @@ POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 . /usr/local/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
 
-# Save and reload the history after each command finishes
-export PROMPT_COMMAND="$PROMPT_COMMAND history -a; history -c; history -r"
 
 
 for f in /etc/bash_completion.d/*; do
    source $f
 done
 
+complete -C '/usr/local/bin/aws_completer' aws
+
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+
+docker-machine start docker > /dev/null
+eval "$(docker-machine env docker)"
+export PATH="/usr/local/sbin:$PATH"
+
+test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash

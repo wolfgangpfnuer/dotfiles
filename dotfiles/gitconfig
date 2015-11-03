@@ -10,10 +10,12 @@
     mnemonicprefix = true
 [user]
 	name = Wolfgang Pfnür
-	email = wolfgang.pfnuer@devbliss.com
+	email = wolfgang.pfnuer@oconotech.com
 [push]
     default = current
 [pull]
     default = current
-[alias]
-	de = devbliss
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

@@ -13,7 +13,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 
-computername="Retina Wolfgang 2014"
+computername="Retina-Wolfgang-2014"
 hostname="`echo $computername | sed -e 's/ /-/g'`"
 
 # Set computer name (as done via System Preferences → Sharing)

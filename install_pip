@@ -1,11 +1,11 @@
 sudo easy_install pip
-sudo easy_install-3.4 pip
+sudo easy_install-3.5 pip
 sudo pip2.7 install --upgrade \
 awscli `# amazon webservices command line interface` \
 fabric `# tool for deployment` \
 pexpect `# remote-control interactive bash processes from python` \
 
-sudo pip3.4 install --upgrade \
+sudo pip3.5 install --upgrade \
 grip `# github flavored markdown preview` \
 powerline-status \
 httpie `# like curl but with json support` \

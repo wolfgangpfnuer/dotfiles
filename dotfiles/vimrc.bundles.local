@@ -1,3 +1,5 @@
 UnBundle 'spf13/vim-autoclose'
+UnBundle 'jiangmiao/auto-pairs'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'wellle/tmux-complete.vim'
+Bundle 'joonty/vdebug'
