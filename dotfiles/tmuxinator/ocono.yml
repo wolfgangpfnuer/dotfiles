@@ -1,0 +1,72 @@
+# ~/.tmuxinator/ocono.yml
+
+name: ocono
+root: ~/ocono-optimizer
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+pre: vagrant up --no-provision
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t ocono
+
+windows:
+  - work:
+      layout: even-horizontal
+      panes:
+          - editor:
+             - rm ~/.vimtags && cd src && update_ctags && cd -
+             - tmux setw -t live-joined synchronize-panes
+             - clear
+          - test:
+            - sleep 5
+            - vagrant ssh
+            - cd /vagrant
+            - clear
+            - vendor/phpunit/phpunit/phpunit -c app/ --coverage-text
+  - local:
+      layout: main-vertical
+      panes:
+          - shell:
+            - sleep 1
+            - vagrant ssh
+          - log:
+            - sleep 3
+            - vagrant ssh
+            - clear
+            - sudo tail -f /var/log/php5-fpm.log /vagrant/app/logs/*.log `sudo find /var/log/nginx -name '*.log'`
+  - release:
+      layout: main-vertical
+      panes:
+          - shell:
+            - ssh release
+          - log:
+            - ssh release
+            - clear
+            - sudo tail -f /var/log/php5-fpm.log /var/log/nginx/!(*.gz) /opt/release.ocono-tech.de/htdocs/app/logs/*
+  - live-logs: fab tail_live
+  - live-joined:
+      layout: even-horizontal
+      panes:
+          - live1:
+            - ssh live1
+          - live2:
+            - ssh live2
