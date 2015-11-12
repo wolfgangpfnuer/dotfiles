@@ -41,7 +41,7 @@ windows:
             - vagrant ssh
             - cd /vagrant
             - clear
-            - vendor/phpunit/phpunit/phpunit -c app/ --coverage-text
+            - make coverage
   - local:
       layout: main-vertical
       panes:
