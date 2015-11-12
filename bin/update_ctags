@@ -5,4 +5,14 @@ echo 'To use this in vim, add the following line to your ~/.vimrc:'
 echo 'set tags=./tags;/,~/.vimtags'
 echo 'If you have old tags in your tagfile, you might want to delete it first:'
 echo 'rm ~/.vimtags'
-ctags -R -a -f ~/.vimtags `pwd`
+set -eux
+ctags --recurse --append -f ~/.vimtags  \
+--exclude=".git" \
+--tag-relative=yes \
+--totals=yes \
+--PHP-kinds=cfiv \
+--regex-PHP='/(abstract)?\s+class\s+([^ ]+)/\2/c/' \
+--regex-PHP='/(static|abstract|public|protected|private)\s+(final\s+)?function\s+(\&\s+)?([^ (]+)/\4/f/' \
+--regex-PHP='/interface\s+([^ ]+)/\1/i/' \
+--regex-PHP='/\$([a-zA-Z_][a-zA-Z0-9_]*)/\1/v/' \
+`pwd`
