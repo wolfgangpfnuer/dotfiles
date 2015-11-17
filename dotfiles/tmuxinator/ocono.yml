@@ -43,21 +43,24 @@ windows:
             - clear
             - make coverage
   - local:
-      layout: main-vertical
+      layout: even-horizontal
       panes:
           - shell:
             - sleep 1
             - vagrant ssh
+            - cd /vagrant
+            - clear
           - log:
             - sleep 3
             - vagrant ssh
             - clear
             - sudo tail -f /var/log/php5-fpm.log /vagrant/app/logs/*.log `sudo find /var/log/nginx -name '*.log'`
   - release:
-      layout: main-vertical
+      layout: even-horizontal
       panes:
           - shell:
             - ssh release
+            - cd /opt/release.ocono-tech.de/htdocs
           - log:
             - ssh release
             - clear
@@ -68,5 +71,7 @@ windows:
       panes:
           - live1:
             - ssh live1
+            - cd /opt/ocono-tech.de/htdocs
           - live2:
             - ssh live2
+            - cd /opt/ocono-tech.de/htdocs

@@ -28,5 +28,3 @@ fi
 docker-machine start docker | grep 'Starting VM...' && docker-machine env docker > ~/.docker_env
 source ~/.docker_env
 export PATH="/usr/local/sbin:$PATH"
-
-test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
