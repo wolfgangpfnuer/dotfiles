@@ -61,6 +61,7 @@ windows:
           - shell:
             - ssh release
             - cd /opt/release.ocono-tech.de/htdocs
+            - clear
           - log:
             - ssh release
             - clear
@@ -72,6 +73,18 @@ windows:
           - live1:
             - ssh live1
             - cd /opt/ocono-tech.de/htdocs
+            - clear
           - live2:
             - ssh live2
             - cd /opt/ocono-tech.de/htdocs
+            - clear
+  - live-sql:
+      - ssh live2
+      - clear
+      - mysql
+      - show tables
+  - live-console:
+      - ssh live2
+      - clear
+      - cd /opt/ocono-tech.de/htdocs
+      - php app/console --env=prod
