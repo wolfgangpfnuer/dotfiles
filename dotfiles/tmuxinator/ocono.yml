@@ -82,7 +82,7 @@ windows:
       - ssh live2
       - clear
       - mysql
-      - show tables
+      - show tables;
   - live-console:
       - ssh live2
       - clear
