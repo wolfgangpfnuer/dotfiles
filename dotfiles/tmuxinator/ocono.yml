@@ -33,8 +33,10 @@ windows:
       layout: even-horizontal
       panes:
           - editor:
+             - sleep 1
              - rm ~/.vimtags && cd src && update_ctags && cd -
              - tmux setw -t live-joined synchronize-panes
+             - tmux setw -t live-workers-joined synchronize-panes
              - clear
           - test:
             - sleep 5
@@ -76,6 +78,25 @@ windows:
             - clear
           - live2:
             - ssh live2
+            - cd /opt/ocono-tech.de/htdocs
+            - clear
+          - live3:
+            - ssh live3
+            - cd /opt/ocono-tech.de/htdocs
+            - clear
+          - live4:
+            - ssh live4
+            - cd /opt/ocono-tech.de/htdocs
+            - clear
+  - live-workers-joined:
+      layout: even-horizontal
+      panes:
+          - live-worker1:
+            - ssh live-worker1
+            - cd /opt/ocono-tech.de/htdocs
+            - clear
+          - live-worker2:
+            - ssh live-worker2
             - cd /opt/ocono-tech.de/htdocs
             - clear
   - live-sql:

@@ -16,3 +16,4 @@ git-devbliss `# git-devbliss from github` \
 jedi `# autocompletion helper` \
 ipython `# interactive python` \
 psutil `# for tmux-powerline` \
+pyaml `# yaml` \
