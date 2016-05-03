@@ -109,3 +109,16 @@ windows:
       - clear
       - cd /opt/ocono-tech.de/htdocs
       - php app/console --env=prod
+  - cluster:
+      layout: even-horizontal
+      panes:
+        - ot-cluster-1:
+          - ssh engineering@ot-cluster-1
+        - ot-cluster-2:
+          - ssh engineering@ot-cluster-2
+        - ot-cluster-3:
+          - ssh engineering@ot-cluster-3
+        - ot-cluster-4:
+          - ssh engineering@ot-cluster-4
+        - ot-cluster-5:
+          - ssh engineering@ot-cluster-5

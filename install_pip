@@ -7,6 +7,7 @@ pexpect `# remote-control interactive bash processes from python` \
 
 sudo pip3.5 install --upgrade \
 grip `# github flavored markdown preview` \
+docker-compose `# docker stuff` \
 powerline-status \
 httpie `# like curl but with json support` \
 flake8 `# pep8 and complexity` \

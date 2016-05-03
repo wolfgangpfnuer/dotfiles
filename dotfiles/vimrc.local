@@ -3,6 +3,7 @@ set nospell
 autocmd BufEnter * :syntax sync fromstart
 autocmd BufEnter * :set nocursorline
 set nofoldenable                  " disable code folding
+set foldmethod=manual                  " disable code folding
 let g:DisableAutoPHPFolding = 1 " disable PIV's folding
 let g:Powerline_symbols = 'fancy' " install powerline-patched font
 let g:syntastic_check_on_open=1
