@@ -1,14 +1,13 @@
 # ~/.tmuxinator/ocono.yml
 
 name: ocono
-root: ~/ocono-optimizer
+root: ~
 
 # Optional tmux socket
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
 # pre: sudo /etc/rc.d/mysqld start
-pre: vagrant up --no-provision
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -33,82 +32,46 @@ windows:
       layout: even-horizontal
       panes:
           - editor:
+             - cd ultron
              - sleep 1
-             - rm ~/.vimtags && cd src && update_ctags && cd -
-             - tmux setw -t live-joined synchronize-panes
-             - tmux setw -t live-workers-joined synchronize-panes
+             - rm ~/.vimtags && update_ctags
+             - tmux setw -t ultron-joined synchronize-panes
+             - tmux setw -t ultron-workers-joined synchronize-panes
              - clear
           - test:
-            - sleep 5
-            - vagrant ssh
-            - cd /vagrant
-            - clear
-            - make coverage
-  - local:
+            - cd ultron
+            - make test
+  - ultron-joined:
       layout: even-horizontal
       panes:
-          - shell:
-            - sleep 1
-            - vagrant ssh
-            - cd /vagrant
+          - ultron-1:
+            - ssh ultron-1
             - clear
-          - log:
-            - sleep 3
-            - vagrant ssh
+          - ultron-2:
+            - ssh ultron-2
             - clear
-            - sudo tail -f /var/log/php5-fpm.log /vagrant/app/logs/*.log `sudo find /var/log/nginx -name '*.log'`
-  - release:
+          - ultron-3:
+            - ssh ultron-3
+            - clear
+          - ultron-4:
+            - ssh ultron-4
+            - clear
+  - ultron-workers-joined:
       layout: even-horizontal
       panes:
-          - shell:
-            - ssh release
-            - cd /opt/release.ocono-tech.de/htdocs
-            - clear
-          - log:
-            - ssh release
-            - clear
-            - sudo tail -f /var/log/php5-fpm.log /var/log/nginx/!(*.gz) /opt/release.ocono-tech.de/htdocs/app/logs/*
-  - live-logs: fab tail_live
-  - live-joined:
-      layout: even-horizontal
-      panes:
-          - live1:
-            - ssh live1
-            - cd /opt/ocono-tech.de/htdocs
-            - clear
-          - live2:
-            - ssh live2
-            - cd /opt/ocono-tech.de/htdocs
-            - clear
-          - live3:
-            - ssh live3
-            - cd /opt/ocono-tech.de/htdocs
-            - clear
-          - live4:
-            - ssh live4
-            - cd /opt/ocono-tech.de/htdocs
-            - clear
-  - live-workers-joined:
-      layout: even-horizontal
-      panes:
-          - live-worker1:
-            - ssh live-worker1
-            - cd /opt/ocono-tech.de/htdocs
-            - clear
-          - live-worker2:
-            - ssh live-worker2
+          - optimizer-1:
+            - ssh optimizer-1
             - cd /opt/ocono-tech.de/htdocs
             - clear
   - live-sql:
-      - ssh live2
+      - ssh optimizer-1
       - clear
       - mysql
       - show tables;
-  - live-console:
-      - ssh live2
+  - live-redis:
+      - ssh optimizer-1
       - clear
-      - cd /opt/ocono-tech.de/htdocs
-      - php app/console --env=prod
+      - redis-cli
   - cluster:
       layout: even-horizontal
       panes:
