@@ -27,8 +27,6 @@ jq
 go
 mercurial
 ack
-docker
-docker-machine
 terminal-notifier
 watch
 tmux

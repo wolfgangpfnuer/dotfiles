@@ -37,6 +37,7 @@ windows:
              - rm ~/.vimtags && update_ctags
              - tmux setw -t ultron-joined synchronize-panes
              - tmux setw -t ultron-workers-joined synchronize-panes
+             - tmux setw -t ultron-backend-joined synchronize-panes
              - clear
           - test:
             - cd ultron
@@ -56,7 +57,17 @@ windows:
           - ultron-4:
             - ssh ultron-4
             - clear
-  - ultron-workers-joined:
+  - ultron-backend-joined:
+      layout: even-horizontal
+      panes:
+          - ultron-backend-1:
+            - ssh ultron-backend-1
+            - clear
+          - ultron-backend-2:
+            - ssh ultron-2
+            - clear
+
+  - ultron-php-backend:
       layout: even-horizontal
       panes:
           - optimizer-1:
@@ -64,24 +75,11 @@ windows:
             - cd /opt/ocono-tech.de/htdocs
             - clear
   - live-sql:
-      - ssh optimizer-1
+      - ssh ultron-backend-1
       - clear
       - mysql
       - show tables;
   - live-redis:
-      - ssh optimizer-1
+      - ssh ultron-backend-1
       - clear
-      - redis-cli
-  - cluster:
-      layout: even-horizontal
-      panes:
-        - ot-cluster-1:
-          - ssh engineering@ot-cluster-1
-        - ot-cluster-2:
-          - ssh engineering@ot-cluster-2
-        - ot-cluster-3:
-          - ssh engineering@ot-cluster-3
-        - ot-cluster-4:
-          - ssh engineering@ot-cluster-4
-        - ot-cluster-5:
-          - ssh engineering@ot-cluster-5
+      - redis-cli -h ultron-live.04hbrh.ng.0001.use1.cache.amazonaws.com -n 12
