@@ -64,7 +64,7 @@ windows:
             - ssh ultron-backend-1
             - clear
           - ultron-backend-2:
-            - ssh ultron-2
+            - ssh ultron-backend-2
             - clear
 
   - ultron-php-backend:
