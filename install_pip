@@ -4,6 +4,7 @@ sudo pip2.7 install --upgrade \
 awscli `# amazon webservices command line interface` \
 fabric `# tool for deployment` \
 pexpect `# remote-control interactive bash processes from python` \
+neovim `# neovim plugin` \
 
 sudo pip3.5 install --upgrade \
 grip `# github flavored markdown preview` \
@@ -18,3 +19,4 @@ jedi `# autocompletion helper` \
 ipython `# interactive python` \
 psutil `# for tmux-powerline` \
 pyaml `# yaml` \
+neovim `# neovim plugin` \
