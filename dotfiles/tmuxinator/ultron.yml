@@ -57,6 +57,27 @@ windows:
           - ultron-4:
             - ssh ultron-4
             - clear
+          - ultron-5:
+            - ssh ultron-5
+            - clear
+          - ultron-6:
+            - ssh ultron-6
+            - clear
+          - ultron-7:
+            - ssh ultron-7
+            - clear
+          - ultron-8:
+            - ssh ultron-8
+            - clear
+          - ultron-9:
+            - ssh ultron-9
+            - clear
+          - ultron-10:
+            - ssh ultron-10
+            - clear
+          - ultron-11:
+            - ssh ultron-11
+            - clear
   - ultron-backend-joined:
       layout: even-horizontal
       panes:
@@ -65,6 +86,18 @@ windows:
             - clear
           - ultron-backend-2:
             - ssh ultron-backend-2
+            - clear
+          - ultron-backend-3:
+            - ssh ultron-backend-3
+            - clear
+          - ultron-backend-4:
+            - ssh ultron-backend-4
+            - clear
+          - ultron-backend-5:
+            - ssh ultron-backend-5
+            - clear
+          - ultron-backend-6:
+            - ssh ultron-backend-6
             - clear
 
   - ultron-php-backend:
@@ -83,3 +116,6 @@ windows:
       - ssh ultron-backend-1
       - clear
       - redis-cli -h ultron-live.04hbrh.ng.0001.use1.cache.amazonaws.com -n 12
+  - ipython-backend-conversion-worker:
+      - ssh ultron-backend-1
+      - docker-compose exec conversion_worker ipython
