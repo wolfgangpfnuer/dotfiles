@@ -58,6 +58,6 @@ brew install $programs 2>&1 | grep -v 'Warning:.*already installed'
 brew install --HEAD $head_programs 2>&1 | grep -v 'Warning:.*already installed'
 brew cask install $casks 2>&1 | grep -v 'Warning:.*already installed'
 brew list | grep macvim > /dev/null || brew install macvim --override-system-vim --with-lua --withluajit
-brew upgrade --all
+brew upgrade
 brew cleanup
 brew cask cleanup
