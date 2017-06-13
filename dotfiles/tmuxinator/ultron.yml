@@ -33,7 +33,7 @@ windows:
       panes:
           - editor:
              - cd ultron
-             - sleep 1
+             - sleep 5
              - rm ~/.vimtags && update_ctags
              - tmux setw -t ultron-joined synchronize-panes
              - tmux setw -t ultron-workers-joined synchronize-panes

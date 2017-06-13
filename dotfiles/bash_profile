@@ -28,4 +28,5 @@ fi
 #docker-machine start | grep 'Starting VM...' && docker-machine env > ~/.docker_env
 #source ~/.docker_env
 export PATH="/usr/local/sbin:$PATH"
-
+eval "$(hub alias -s)"
+ssh-add -k .ssh/ocono_rsa

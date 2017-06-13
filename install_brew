@@ -13,6 +13,7 @@ bash-completion
 caskroom/cask/brew-cask
 git
 git-lfs
+hub
 htop-osx
 python
 python3

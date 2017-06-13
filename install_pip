@@ -1,12 +1,10 @@
-sudo easy_install pip
-sudo easy_install-3.5 pip
-sudo pip2.7 install --upgrade \
+sudo python2.7 -m pip install --upgrade \
 awscli `# amazon webservices command line interface` \
 fabric `# tool for deployment` \
 pexpect `# remote-control interactive bash processes from python` \
 neovim `# neovim plugin` \
 
-sudo pip3.5 install --upgrade \
+sudo python3.6 -m pip install --upgrade \
 grip `# github flavored markdown preview` \
 docker-compose `# docker stuff` \
 powerline-status \
