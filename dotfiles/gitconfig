@@ -10,7 +10,7 @@
     mnemonicprefix = true
 [user]
 	name = Wolfgang Pfnür
-	email = wolfgang.pfnuer@oconotech.com
+	email = wolfgang.pfnuer@ocono.com
 [push]
     default = current
 [pull]

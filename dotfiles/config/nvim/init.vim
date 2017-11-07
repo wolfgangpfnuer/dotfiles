@@ -1,0 +1,125 @@
+set termguicolors
+
+packadd minpac
+
+call minpac#init()
+
+" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+" Add other plugins here.
+call minpac#add('kassio/neoterm') " terminal tools
+
+
+call minpac#add('junegunn/fzf') " fuzzy finder
+
+call minpac#add('davidhalter/jedi-vim') " python completion
+
+call minpac#add('tpope/vim-fugitive') " git commands
+call minpac#add('tpope/vim-commentary') " comment stuff
+call minpac#add('tpope/vim-surround') " quotes exchange
+call minpac#add('tpope/vim-projectionist') " project stuff : alternate files
+call minpac#add('tpope/vim-obsession')  " session management
+call minpac#add('tpope/vim-dispatch') " make replacement with projectionist tie-in
+call minpac#add('radenling/vim-dispatch-neovim')  " dispatch in neovim terminal
+
+
+call minpac#add('airblade/vim-gitgutter')  " git changed
+call minpac#add('vim-airline/vim-airline')  " statusbar
+call minpac#add('bling/vim-bufferline')  " buffers in statusbar
+
+call minpac#add('mbbill/undotree')  " undo explorer
+call minpac#add('scrooloose/nerdtree') " file explorer
+
+call minpac#add('altercation/vim-colors-solarized') " theme
+
+
+call minpac#update()
+silent! call minpac#clean()
+
+
+
+let g:airline_powerline_fonts=1
+
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+nnoremap <silent> <ESC>OA <Nop>
+nnoremap <silent> <ESC>OB <Nop>
+nnoremap <silent> <ESC>OC <Nop>
+nnoremap <silent> <ESC>OD <Nop>
+inoremap <silent> <ESC>OA <Nop>
+inoremap <silent> <ESC>OB <Nop>
+inoremap <silent> <ESC>OC <Nop>
+inoremap <silent> <ESC>OD <Nop>
+
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
+
+set wrap
+set nospell
+autocmd BufEnter * :syntax sync fromstart
+autocmd BufEnter * :set nocursorline
+set nofoldenable                  " disable code folding
+set foldmethod=manual                  " disable code folding
+
+
+set clipboard=unnamed
+set autowrite                       " Automatically write a file when leaving a modified buffer
+
+set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
+set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
+set virtualedit=onemore             " Allow for cursor beyond last character
+set history=1000                    " Store a ton of history (default is 20)
+
+set backup                  " Backups are nice ...
+set undofile                " So is persistent undo ...
+set undolevels=1000         " Maximum number of changes that can be undone
+set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
+set undodir=~/.vim/.vimundo 
+set directory=~/.vim/.vimswap
+set backupdir=~/.vim/.vimbackup
+set viewdir=~/.vim/.vimviews
+
+
+set backspace=indent,eol,start  " Backspace for dummies
+set linespace=0                 " No extra spaces between rows
+set number                      " Line numbers on
+set showmatch                   " Show matching brackets/parenthesis
+set incsearch                   " Find as you type search
+set hlsearch                    " Highlight search terms
+set winminheight=0              " Windows can be 0 line high
+set ignorecase                  " Case insensitive search
+set smartcase                   " Case sensitive when uc present
+set wildmenu                    " Show list instead of just completing
+set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
+set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
+set scrolljump=5                " Lines to scroll when cursor leaves screen
+set scrolloff=3                 " Minimum lines to keep above and below cursor
+set foldenable                  " Auto fold code
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+
+set autoindent                  " Indent at the same level of the previous line
+set shiftwidth=4                " Use indents of 4 spaces
+set expandtab                   " Tabs are spaces, not tabs
+set tabstop=4                   " An indentation every four columns
+set softtabstop=4               " Let backspace delete indent
+set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
+set splitright                  " Puts new vsplit windows to the right of the current
+set splitbelow                  " Puts new split windows to the bottom of the current
+
+" Visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv
+
+" Allow using the repeat operator with a visual selection (!)
+" http://stackoverflow.com/a/8064607/127816
+vnoremap . :normal .<CR>
+
+syntax enable
+set background=dark
+colorscheme solarized

@@ -17,4 +17,4 @@ chsh -s /usr/local/bin/bash
 
 mkdir -p ~/go/packages
 
-sh <(curl https://j.mp/spf13-vim3 -L)
+mkdir -p ~/.vim/.vim{backup,undo,views,swap}
