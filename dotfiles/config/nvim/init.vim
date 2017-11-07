@@ -9,13 +9,13 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 " Add other plugins here.
 call minpac#add('kassio/neoterm') " terminal tools
+let g:neoterm_autoscroll = 1
 
 
 call minpac#add('junegunn/fzf') " fuzzy finder
 
 call minpac#add('davidhalter/jedi-vim') " python completion
 
-call minpac#add('tpope/vim-fugitive') " git commands
 call minpac#add('tpope/vim-commentary') " comment stuff
 call minpac#add('tpope/vim-surround') " quotes exchange
 call minpac#add('tpope/vim-projectionist') " project stuff : alternate files
@@ -35,7 +35,7 @@ call minpac#add('altercation/vim-colors-solarized') " theme
 
 
 call minpac#update()
-silent! call minpac#clean()
+" call minpac#clean()
 
 
 
@@ -50,14 +50,6 @@ inoremap <silent> <ESC>OA <Nop>
 inoremap <silent> <ESC>OB <Nop>
 inoremap <silent> <ESC>OC <Nop>
 inoremap <silent> <ESC>OD <Nop>
-
-let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 
 set wrap
 set nospell
@@ -123,3 +115,5 @@ vnoremap . :normal .<CR>
 syntax enable
 set background=dark
 colorscheme solarized
+
+autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif  " Always switch to the current file directory
