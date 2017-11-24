@@ -16,6 +16,7 @@ call minpac#add('junegunn/fzf') " fuzzy finder
 
 call minpac#add('davidhalter/jedi-vim') " python completion
 
+call minpac#add('tpope/vim-fugitive') " git commands
 call minpac#add('tpope/vim-commentary') " comment stuff
 call minpac#add('tpope/vim-surround') " quotes exchange
 call minpac#add('tpope/vim-projectionist') " project stuff : alternate files
@@ -32,7 +33,16 @@ call minpac#add('mbbill/undotree')  " undo explorer
 call minpac#add('scrooloose/nerdtree') " file explorer
 
 call minpac#add('altercation/vim-colors-solarized') " theme
+call minpac#add('icymind/NeoSolarized') " theme
+set background=dark
+colorscheme NeoSolarized
 
+call minpac#add('python-mode/python-mode') " python indent and all
+let g:pymode_python = 'python3'
+let g:pymode_lint = 0
+let g:pymode_folding = 0
+
+call minpac#add('w0rp/ale')
 
 call minpac#update()
 " call minpac#clean()
@@ -50,6 +60,12 @@ inoremap <silent> <ESC>OA <Nop>
 inoremap <silent> <ESC>OB <Nop>
 inoremap <silent> <ESC>OC <Nop>
 inoremap <silent> <ESC>OD <Nop>
+
+
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-l> :wincmd l<CR>
 
 set wrap
 set nospell
@@ -113,7 +129,5 @@ vnoremap > >gv
 vnoremap . :normal .<CR>
 
 syntax enable
-set background=dark
-colorscheme solarized
 
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif  " Always switch to the current file directory

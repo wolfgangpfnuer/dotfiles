@@ -35,7 +35,7 @@ npm
 php56
 php56-xdebug
 composer
-neovim/neovim/neovim
+neovim
 "
 head_programs="
 "
