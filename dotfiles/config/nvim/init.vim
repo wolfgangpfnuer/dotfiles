@@ -23,18 +23,26 @@ call minpac#add('tpope/vim-projectionist') " project stuff : alternate files
 call minpac#add('tpope/vim-obsession')  " session management
 call minpac#add('tpope/vim-dispatch') " make replacement with projectionist tie-in
 call minpac#add('radenling/vim-dispatch-neovim')  " dispatch in neovim terminal
-
+command! -bang -nargs=* -range=0 -complete=customlist,dispatch#command_complete D
+      \ execute dispatch#compile_command(<bang>0, <q-args>,
+      \   <line1> && !<count> ? -1 : <line1> == <line2> ? <count> : 0)
 
 call minpac#add('airblade/vim-gitgutter')  " git changed
 call minpac#add('vim-airline/vim-airline')  " statusbar
-call minpac#add('bling/vim-bufferline')  " buffers in statusbar
+let g:airline#extensions#tabline#enabled = 1
 
 call minpac#add('mbbill/undotree')  " undo explorer
+nnoremap <Leader>u :UndotreeToggle<CR>
+" If undotree is opened, it is likely one wants to interact with it.
+let g:undotree_SetFocusWhenToggle=1
 call minpac#add('scrooloose/nerdtree') " file explorer
+nnoremap <Leader>e :NERDTreeToggle<CR>
 
 call minpac#add('altercation/vim-colors-solarized') " theme
 call minpac#add('icymind/NeoSolarized') " theme
 set background=dark
+let g:neosolarized_contrast = "high"
+let g:neosolarized_termtrans=1
 colorscheme NeoSolarized
 
 call minpac#add('python-mode/python-mode') " python indent and all
@@ -92,6 +100,7 @@ set directory=~/.vim/.vimswap
 set backupdir=~/.vim/.vimbackup
 set viewdir=~/.vim/.vimviews
 
+set hidden " don't warn when switching unsaved buffers
 
 set backspace=indent,eol,start  " Backspace for dummies
 set linespace=0                 " No extra spaces between rows
