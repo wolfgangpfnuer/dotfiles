@@ -1,4 +1,5 @@
 set termguicolors
+filetype plugin indent on
 
 packadd minpac
 
@@ -50,10 +51,14 @@ let g:pymode_python = 'python3'
 let g:pymode_lint = 0
 let g:pymode_folding = 0
 
-call minpac#add('w0rp/ale')
+call minpac#add('w0rp/ale')  " Asyncronous Lint Engine
 
-call minpac#update()
-" call minpac#clean()
+call minpac#add('mhinz/vim-grepper')  " async grep tool
+
+if $VIM_UPDATE_CLEAN
+    call minpac#clean()
+    call minpac#update('', {'do': 'quit'})
+endif
 
 
 
