@@ -1,8 +1,9 @@
 set -eux
 git fetch
+echo "Deleting remote tracking branches whose tracked branches on server are gone..."
+git remote prune origin
 echo "Deleting all remote branches that are already merged into master..."
 git branch -r --merged origin/master | grep -v master | sed 's#origin/##' | xargs -n1 -I{} git push origin :{}
-echo "Deleting remote tracking branches whose tracked branches on server are gone..."
 git remote prune origin
 echo "Deleting all local branches (except current) that are already merged into local master..."
 git branch --merged master | grep -v master | grep -v '\*' | xargs git branch -d
