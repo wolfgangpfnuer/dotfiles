@@ -4,7 +4,7 @@ fabric `# tool for deployment` \
 pexpect `# remote-control interactive bash processes from python` \
 neovim `# neovim plugin` \
 
-sudo python3.6 -m pip install --upgrade \
+sudo python3.7 -m pip install --upgrade \
 grip `# github flavored markdown preview` \
 docker-compose `# docker stuff` \
 powerline-status \
@@ -16,5 +16,6 @@ git-devbliss `# git-devbliss from github` \
 jedi `# autocompletion helper` \
 ipython `# interactive python` \
 psutil `# for tmux-powerline` \
-pyaml `# yaml` \
+pyyaml `# yaml` \
 neovim `# neovim plugin` \
+pipenv `# better package manager?` \
