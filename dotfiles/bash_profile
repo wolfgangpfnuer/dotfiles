@@ -11,7 +11,7 @@ shopt -s histverify # edit a recalled history line before executing
 powerline-daemon
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /usr/local/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
+. /usr/local/lib/python3*/site-packages/powerline/bindings/bash/powerline.sh
 
 
 
@@ -19,7 +19,7 @@ for f in /etc/bash_completion.d/*; do
    source $f
 done
 
-complete -C '/usr/local/bin/aws_completer' aws
+complete -C aws_completer aws
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
@@ -27,8 +27,12 @@ fi
 
 #docker-machine start | grep 'Starting VM...' && docker-machine env > ~/.docker_env
 #source ~/.docker_env
-export PATH="/usr/local/sbin:$PATH"
+export PATH="~/Library/Python/2.7/bin:/usr/local/sbin:$PATH"
 eval "$(hub alias -s)"
 ssh-add -k .ssh/ocono_rsa
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export ANSIBLE_SSH_PIPELINING=1
+export ANSIBLE_FORKS=25
+alias ansible='ansible -i ~/ec2.py -u ubuntu'
+ssh-add -K ~/.ssh/id_rsa

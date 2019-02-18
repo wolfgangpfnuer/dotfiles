@@ -1,7 +1,7 @@
 export GOPATH=~/go
-export PATH=.:~/dotfiles/bin:~/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+export PATH=.:~/dotfiles/bin:~/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/local/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 export LIBRARY_PATH=/opt/local/lib
-export EDITOR='mvim -v -f'
+export EDITOR='vi'
 export MAVEN_OPTS=-Xmx1024m
 export MAPPING_SIGN_KEY=~/fe.der
 
@@ -15,3 +15,5 @@ alias ed='ed -p:'
 source ~/bash_secrets
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+export FIX_MAC_OMG="apt-get update && apt-get install -y build-essential &&"
