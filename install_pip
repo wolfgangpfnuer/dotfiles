@@ -17,5 +17,5 @@ jedi `# autocompletion helper` \
 ipython `# interactive python` \
 psutil `# for tmux-powerline` \
 pyyaml `# yaml` \
-neovim `# neovim plugin` \
+pynvim `# neovim plugin` \
 pipenv `# better package manager?` \

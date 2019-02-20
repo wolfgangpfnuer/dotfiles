@@ -23,6 +23,7 @@ call minpac#add('tpope/vim-surround') " quotes exchange
 call minpac#add('tpope/vim-projectionist') " project stuff : alternate files
 call minpac#add('tpope/vim-obsession')  " session management
 call minpac#add('tpope/vim-dispatch') " make replacement with projectionist tie-in
+call minpac#add('c0r73x/neotags.nvim') " ctags support for neovim
 call minpac#add('radenling/vim-dispatch-neovim')  " dispatch in neovim terminal
 command! -bang -nargs=* -range=0 -complete=customlist,dispatch#command_complete D
       \ execute dispatch#compile_command(<bang>0, <q-args>,
@@ -100,7 +101,7 @@ set backup                  " Backups are nice ...
 set undofile                " So is persistent undo ...
 set undolevels=1000         " Maximum number of changes that can be undone
 set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
-set undodir=~/.vim/.vimundo 
+set undodir=~/.vim/.vimundo
 set directory=~/.vim/.vimswap
 set backupdir=~/.vim/.vimbackup
 set viewdir=~/.vim/.vimviews

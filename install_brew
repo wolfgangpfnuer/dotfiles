@@ -23,7 +23,6 @@ wget
 ngrep
 openssl
 readline
-ctags
 jq
 go
 mercurial
@@ -38,6 +37,7 @@ composer
 neovim
 "
 head_programs="
+universal-ctags/universal-ctags/universal-ctags
 "
 
 casks="
