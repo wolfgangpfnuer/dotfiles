@@ -56,7 +56,7 @@ windows:
           - recommender:
             - ssh swarm1.tron.weq.com
             - clear
-            - watch 'docker service ps tron_recommender --format "{{.Image}} {{.Name}}.{{.ID}}@{{.Node}} {{.CurrentState}} => {{.DesiredState}} {{.Error}}" | sed -n "s#$(docker service ls -f name=tron_recommender --format {{.Image}})##p" | grep Running'
+            - watch 'docker service ps tron_recommender --format "{{.Image}} {{.Name}}.{{.ID}}@{{.Node}} {{.CurrentState}} => {{.DesiredState}} {{.Error}}" | sed -n "s#$(docker service ls -f name=tron_recommender --format {{.Image}})##p" | grep Running | column -s " " -t'
           - overview:
             - ssh swarm1.tron.weq.com
             - clear
@@ -64,7 +64,7 @@ windows:
           - librarian:
             - ssh swarm1.tron.weq.com
             - clear
-            - watch 'docker service ps tron_librarian --format "{{.Image}} {{.Name}}.{{.ID}}@{{.Node}} {{.CurrentState}} => {{.DesiredState}} {{.Error}}" | sed -n "s#$(docker service ls -f name=tron_librarian --format {{.Image}})##p" | grep Running'
+            - watch 'docker service ps tron_librarian --format "{{.Image}} {{.Name}}.{{.ID}}@{{.Node}} {{.CurrentState}} => {{.DesiredState}} {{.Error}}" | sed -n "s#$(docker service ls -f name=tron_librarian --format {{.Image}})##p" | grep Running | column -s " " -t'
   - tron-joined:
       layout: even-horizontal
       panes:
