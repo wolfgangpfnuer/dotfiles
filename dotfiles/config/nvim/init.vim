@@ -53,6 +53,7 @@ let g:pymode_lint = 0
 let g:pymode_folding = 0
 
 call minpac#add('w0rp/ale')  " Asyncronous Lint Engine
+let g:ale_python_auto_pipenv = 1
 
 call minpac#add('mhinz/vim-grepper')  " async grep tool
 

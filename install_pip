@@ -19,3 +19,4 @@ psutil `# for tmux-powerline` \
 pyyaml `# yaml` \
 pynvim `# neovim plugin` \
 pipenv `# better package manager?` \
+pymode `# helper for pymode plugin in vim` \

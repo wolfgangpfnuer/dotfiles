@@ -1,0 +1,76 @@
+
+# ~/.tmuxinator/tron.yml
+
+name: tron
+root: ~/tron
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t ocono
+
+windows:
+  - work:
+      layout: main-vertical
+      panes:
+          - editor:
+             - sleep 5
+             - rm ~/.vimtags && update_ctags
+             - tmux setw -t tron-joined synchronize-panes
+             - clear
+          - test:
+            - make test
+          - ipython:
+            - pipenv run ipython
+  - overview:
+      layout: even-horizontal
+      panes:
+          - jenkins:
+            - ssh jenkins
+            - clear
+          - tron:
+            - ssh swarm1.tron.weq.com
+            - clear
+  - tron-joined:
+      layout: even-horizontal
+      panes:
+          - swarm1.tron.weq.com:
+            - ssh swarm1.tron.weq.com
+            - clear
+          - swarm2.tron.weq.com:
+            - ssh swarm2.tron.weq.com
+            - clear
+          - swarm3.tron.weq.com:
+            - ssh swarm3.tron.weq.com
+            - clear
+          - swarm4.tron.weq.com:
+            - ssh swarm4.tron.weq.com
+            - clear
+          - swarm5.tron.weq.com:
+            - ssh swarm5.tron.weq.com
+            - clear
+          - swarm6.tron.weq.com:
+            - ssh swarm6.tron.weq.com
+            - clear
+          - swarm7.tron.weq.com:
+            - ssh swarm7.tron.weq.com
+            - clear
