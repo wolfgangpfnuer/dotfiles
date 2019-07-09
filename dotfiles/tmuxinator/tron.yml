@@ -50,6 +50,21 @@ windows:
           - tron:
             - ssh swarm1.tron.weq.com
             - clear
+  - deployment:
+      layout: main-vertical
+      panes:
+          - recommender:
+            - ssh swarm1.tron.weq.com
+            - clear
+            - watch 'docker service ps tron_recommender --format "{{.Image}} {{.Name}}.{{.ID}}@{{.Node}} {{.CurrentState}} => {{.DesiredState}} {{.Error}}" | sed -n "s#$(docker service ls -f name=tron_recommender --format {{.Image}})##p" | grep Running'
+          - overview:
+            - ssh swarm1.tron.weq.com
+            - clear
+            - watch docker service ls
+          - librarian:
+            - ssh swarm1.tron.weq.com
+            - clear
+            - watch 'docker service ps tron_librarian --format "{{.Image}} {{.Name}}.{{.ID}}@{{.Node}} {{.CurrentState}} => {{.DesiredState}} {{.Error}}" | sed -n "s#$(docker service ls -f name=tron_librarian --format {{.Image}})##p" | grep Running'
   - tron-joined:
       layout: even-horizontal
       panes:
