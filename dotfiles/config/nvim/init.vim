@@ -17,6 +17,8 @@ call minpac#add('junegunn/fzf') " fuzzy finder
 
 call minpac#add('davidhalter/jedi-vim') " python completion
 
+call minpac#add('christoomey/vim-tmux-navigator')  " tmux navigation
+
 call minpac#add('tpope/vim-fugitive') " git commands
 call minpac#add('tpope/vim-commentary') " comment stuff
 call minpac#add('tpope/vim-surround') " quotes exchange

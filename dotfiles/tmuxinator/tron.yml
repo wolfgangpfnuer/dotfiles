@@ -30,7 +30,7 @@ root: ~/tron
 
 windows:
   - work:
-      layout: main-vertical
+      layout: even-horizontal
       panes:
           - editor:
              - sleep 5
@@ -39,8 +39,7 @@ windows:
              - clear
           - test:
             - make test
-          - ipython:
-            - pipenv run ipython
+  - ipython: pipenv run ipython
   - overview:
       layout: even-horizontal
       panes:
