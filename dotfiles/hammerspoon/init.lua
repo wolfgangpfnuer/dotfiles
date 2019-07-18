@@ -121,7 +121,7 @@ for _, service in pairs({"recommender", "librarian", "academy", "common"}) do
     hs.pathwatcher.new(os.getenv("HOME") .. "/tron/tron/" .. service, function(files)
         for _, file in pairs(files) do
             if string.find(file, '.py') and not string.find(file, '.pyc') then
-                io.popen(os.getenv("SHELL") .. " -l -i -c 'tmux send -t 2 \"C-c\" && tmux send -Rt 2 \".venv/bin/pytest tron -k " .. service .. "\" enter'", 'r')
+                io.popen(os.getenv("SHELL") .. " -l -i -c 'tmux send -t 2 \"C-c\" && tmux send -Rt 2 \".venv/bin/pytest --cov-fail-under=0 -n auto tron -k " .. service .. "\" enter'", 'r')
                 return
             end
         end
@@ -129,7 +129,7 @@ for _, service in pairs({"recommender", "librarian", "academy", "common"}) do
     hs.pathwatcher.new(os.getenv("HOME") .. "/tron/tron/test/" .. service, function(files)
         for _, file in pairs(files) do
             if string.find(file, '.py') and not string.find(file, '.pyc') then
-                io.popen(os.getenv("SHELL") .. " -l -i -c 'tmux send -t 2 \"C-c\" && tmux send -Rt 2 \".venv/bin/pytest tron -k " .. service .. "\" enter'", 'r')
+                io.popen(os.getenv("SHELL") .. " -l -i -c 'tmux send -t 2 \"C-c\" && tmux send -Rt 2 \".venv/bin/pytest --cov-fail-under=0 -n auto tron -k " .. service .. "\" enter'", 'r')
                 return
             end
         end
