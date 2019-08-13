@@ -46,9 +46,11 @@ windows:
           - jenkins:
             - ssh jenkins
             - clear
+            - sudo salt-key -L --force-color | tr '\n' ' '
           - tron:
             - ssh swarm1.tron.weq.com
             - clear
+            - docker node ls
   - deployment:
       layout: main-vertical
       panes:
