@@ -48,24 +48,43 @@ windows:
             - clear
             - sudo salt-key -L --force-color | tr '\n' ' '
           - tron:
-            - ssh swarm1.tron.weq.com
+            - ssh swarm
             - clear
             - docker node ls
   - deployment:
       layout: main-vertical
       panes:
           - recommender:
-            - ssh swarm1.tron.weq.com
+            - ssh swarm
             - clear
             - watch 'docker service ps tron_recommender --format "{{.Image}} {{.Name}}.{{.ID}}|{{.Node}}|{{.CurrentState}}|=>|{{.DesiredState}}|{{.Error}}" | sed -n "s#$(docker service ls -f name=tron_recommender --format {{.Image}})##p" | grep Running | column -s "|" -t'
           - overview:
-            - ssh swarm1.tron.weq.com
+            - ssh swarm
             - clear
             - watch docker service ls
           - librarian:
-            - ssh swarm1.tron.weq.com
+            - ssh swarm
             - clear
             - watch 'docker service ps tron_librarian --format "{{.Image}} {{.Name}}.{{.ID}}|{{.Node}}|{{.CurrentState}}|=>|{{.DesiredState}}|{{.Error}}" | sed -n "s#$(docker service ls -f name=tron_librarian --format {{.Image}})##p" | grep Running | column -s "|" -t'
+  - logs:
+      layout: main-vertical
+      panes:
+          - recommender:
+            - ssh swarm
+            - clear
+            - docker service logs --tail 0 -f tron_recommender
+          - librarian:
+            - ssh swarm
+            - clear
+            - docker service logs --tail 0 -f tron_librarian
+          - surveyor:
+            - ssh swarm
+            - clear
+            - docker service logs --tail 0 -f tron_surveyor
+          - phantom:
+            - ssh swarm
+            - clear
+            - docker service logs --tail 0 -f tron_phantom
   - tron-joined:
       layout: even-horizontal
       panes:
