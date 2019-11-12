@@ -1,0 +1,89 @@
+session_name: tron
+start_directory: ~/tron
+windows:
+- layout: even-horizontal
+  panes:
+  - shell_command:
+    - rm ~/.vimtags && update_ctags
+    - clear
+  - shell_command:
+    - make test
+  window_name: work
+- panes:
+  - pipenv run ipython
+  window_name: ipython
+- layout: even-horizontal
+  panes:
+  - shell_command:
+    - ssh jenkins
+    - clear
+    - sudo salt-key -L --force-color | tr '\n' ' '
+  - shell_command:
+    - ssh swarm
+    - clear
+    - docker node ls
+  window_name: overview
+- layout: main-vertical
+  panes:
+  - shell_command:
+    - ssh swarm
+    - clear
+    - watch 'docker service ps tron_recommender --format "{{.Image}} {{.Name}}.{{.ID}}|{{.Node}}|{{.CurrentState}}|=>|{{.DesiredState}}|{{.Error}}"
+      | sed -n "s#$(docker service ls -f name=tron_recommender --format {{.Image}})##p"
+      | grep Running | column -s "|" -t'
+  - shell_command:
+    - ssh swarm
+    - clear
+    - watch docker service ls
+  - shell_command:
+    - ssh swarm
+    - clear
+    - watch 'docker service ps tron_librarian --format "{{.Image}} {{.Name}}.{{.ID}}|{{.Node}}|{{.CurrentState}}|=>|{{.DesiredState}}|{{.Error}}"
+      | sed -n "s#$(docker service ls -f name=tron_librarian --format {{.Image}})##p"
+      | grep Running | column -s "|" -t'
+  window_name: deployment
+- layout: main-vertical
+  panes:
+  - shell_command:
+    - ssh swarm
+    - clear
+    - docker service logs --tail 0 -f tron_recommender
+  - shell_command:
+    - ssh swarm
+    - clear
+    - docker service logs --tail 0 -f tron_librarian
+  - shell_command:
+    - ssh swarm
+    - clear
+    - docker service logs --tail 0 -f tron_surveyor
+  - shell_command:
+    - ssh swarm
+    - clear
+    - docker service logs --tail 0 -f tron_phantom
+  window_name: logs
+- layout: even-horizontal
+  panes:
+  - shell_command:
+    - ssh swarm1.tron.weq.com
+    - clear
+  - shell_command:
+    - ssh swarm2.tron.weq.com
+    - clear
+  - shell_command:
+    - ssh swarm3.tron.weq.com
+    - clear
+  - shell_command:
+    - ssh swarm4.tron.weq.com
+    - clear
+  - shell_command:
+    - ssh swarm5.tron.weq.com
+    - clear
+  - shell_command:
+    - ssh swarm6.tron.weq.com
+    - clear
+  - shell_command:
+    - ssh swarm7.tron.weq.com
+    - clear
+  window_name: tron-joined
+  options_after:
+    synchronize-panes: on

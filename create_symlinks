@@ -24,3 +24,8 @@ sudo ln -sf ~/dotfiles/bash_completion/vagrant-bash-completion/vagrant /etc/bash
 sudo ln -sf ~/dotfiles/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 mkdir -p ~/bin
 sudo ln -sf /opt/local/bin/ack-5.12 ~/bin/ack
+
+cat <<EOF > ~/bin/mux
+#! /usr/bin/env bash
+tmuxp load \$@
+EOF
