@@ -20,3 +20,4 @@ pyyaml `# yaml` \
 pynvim `# neovim plugin` \
 pipenv `# better package manager?` \
 pymode `# helper for pymode plugin in vim` \
+tmuxp `# tmux setup` \

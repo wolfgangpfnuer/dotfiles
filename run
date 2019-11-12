@@ -3,7 +3,6 @@ sudo ./osx
 ./create_symlinks
 
 ./install_brew
-./install_gem
 ./install_pip
 
 cp powerline-fonts/*/*.{o,t}tf ~/Library/Fonts
