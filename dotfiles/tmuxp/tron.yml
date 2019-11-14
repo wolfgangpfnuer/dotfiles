@@ -7,7 +7,7 @@ windows:
     - rm ~/.vimtags && update_ctags
     - clear
   - shell_command:
-    - make test
+    - make watch_test
   window_name: work
 - panes:
   - pipenv run ipython
@@ -85,5 +85,19 @@ windows:
     - ssh swarm7.tron.weq.com
     - clear
   window_name: tron-joined
+  options_after:
+    synchronize-panes: on
+- layout: even-horizontal
+  panes:
+  - shell_command:
+    - ssh master1.tron.weq.com
+    - clear
+  - shell_command:
+    - ssh master2.tron.weq.com
+    - clear
+  - shell_command:
+    - ssh master3.tron.weq.com
+    - clear
+  window_name: tron-master-joined
   options_after:
     synchronize-panes: on

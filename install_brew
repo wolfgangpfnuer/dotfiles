@@ -35,6 +35,7 @@ php56
 php56-xdebug
 composer
 neovim
+entr
 "
 head_programs="
 universal-ctags/universal-ctags/universal-ctags
