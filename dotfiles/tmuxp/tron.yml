@@ -23,7 +23,7 @@ windows:
     - clear
     - docker node ls
   window_name: overview
-- layout: main-vertical
+- layout: tiled
   panes:
   - shell_command:
     - ssh swarm
@@ -34,13 +34,13 @@ windows:
   - shell_command:
     - ssh swarm
     - clear
-    - watch docker service ls
-  - shell_command:
-    - ssh swarm
-    - clear
     - watch 'docker service ps tron_librarian --format "{{.Image}} {{.Name}}.{{.ID}}|{{.Node}}|{{.CurrentState}}|=>|{{.DesiredState}}|{{.Error}}"
       | sed -n "s#$(docker service ls -f name=tron_librarian --format {{.Image}})##p"
       | grep Running | column -s "|" -t'
+  - shell_command:
+    - ssh swarm
+    - clear
+    - watch docker service ls
   window_name: deployment
 - layout: main-vertical
   panes:
