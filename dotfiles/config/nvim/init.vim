@@ -15,6 +15,12 @@ let g:neoterm_autoscroll = 1
 
 call minpac#add('junegunn/fzf') " fuzzy finder
 
+call minpac#add('beeender/Comrade')  " intelliJ
+call minpac#add('Shougo/deoplete.nvim')
+call minpac#add('neoclide/coc.nvim')  " conquer of completion
+call minpac#add('puremourning/vimspector')  " debugger
+let g:deoplete#enable_at_startup = 1
+
 call minpac#add('davidhalter/jedi-vim') " python completion
 
 call minpac#add('christoomey/vim-tmux-navigator')  " tmux navigation

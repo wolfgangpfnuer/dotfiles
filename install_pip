@@ -1,11 +1,9 @@
-sudo python2.7 -m pip install --upgrade \
-awscli `# amazon webservices command line interface` \
+sudo python3.8 -m pip install --upgrade \
 fabric `# tool for deployment` \
 pexpect `# remote-control interactive bash processes from python` \
 neovim `# neovim plugin` \
-
-sudo python3.7 -m pip install --upgrade \
 grip `# github flavored markdown preview` \
+awscli `# amazon webservices command line interface` \
 docker-compose `# docker stuff` \
 powerline-status \
 httpie `# like curl but with json support` \

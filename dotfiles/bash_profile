@@ -27,7 +27,7 @@ fi
 
 #docker-machine start | grep 'Starting VM...' && docker-machine env > ~/.docker_env
 #source ~/.docker_env
-export PATH="~/Library/Python/2.7/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/python@3.8/bin:~/Library/Python/2.7/bin:/usr/local/sbin:$PATH"
 eval "$(hub alias -s)"
 ssh-add -k .ssh/ocono_rsa
 
@@ -36,3 +36,4 @@ export ANSIBLE_SSH_PIPELINING=1
 export ANSIBLE_FORKS=25
 alias ansible='ansible -i ~/ec2.py -u ubuntu'
 ssh-add -K ~/.ssh/id_rsa
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
