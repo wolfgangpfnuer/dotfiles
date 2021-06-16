@@ -10,11 +10,12 @@
     mnemonicprefix = true
 [user]
 	name = Wolfgang Pfnür
-	email = wolfgang.pfnuer@weq.com
+	email = wolfgang.pfnuer@swaarm.com
 [push]
     default = current
 [pull]
     default = current
+	rebase = false
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

@@ -27,7 +27,7 @@ fi
 
 #docker-machine start | grep 'Starting VM...' && docker-machine env > ~/.docker_env
 #source ~/.docker_env
-export PATH="/usr/local/opt/python@3.8/bin:~/Library/Python/2.7/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/python@3.9/bin:/usr/local/opt/python@3.8/bin:~/Library/Python/2.7/bin:/usr/local/sbin:$PATH"
 eval "$(hub alias -s)"
 ssh-add -k .ssh/ocono_rsa
 
@@ -35,5 +35,12 @@ ssh-add -k .ssh/ocono_rsa
 export ANSIBLE_SSH_PIPELINING=1
 export ANSIBLE_FORKS=25
 alias ansible='ansible -i ~/ec2.py -u ubuntu'
+alias deploy='git push --atomic origin $(git branch --show-current) $(git describe --tags)'
 ssh-add -K ~/.ssh/id_rsa
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
+
+# Setting PATH for Python 3.9
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
+export PATH

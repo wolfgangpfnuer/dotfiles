@@ -12,7 +12,6 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('kassio/neoterm') " terminal tools
 let g:neoterm_autoscroll = 1
 
-
 call minpac#add('junegunn/fzf') " fuzzy finder
 
 call minpac#add('beeender/Comrade')  " intelliJ
@@ -62,6 +61,8 @@ let g:pymode_folding = 0
 
 call minpac#add('w0rp/ale')  " Asyncronous Lint Engine
 let g:ale_python_auto_pipenv = 1
+let b:ale_fixers = {'python': ['black', 'isort']}
+let b:ale_fix_on_save = 1
 
 call minpac#add('mhinz/vim-grepper')  " async grep tool
 
