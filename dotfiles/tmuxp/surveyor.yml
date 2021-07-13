@@ -1,0 +1,16 @@
+session_name: surveyor
+start_directory: ~/surveyor
+windows:
+- layout: even-horizontal
+  panes:
+  - shell_command:
+    - rm ~/.vimtags && update_ctags
+    - clear
+  window_name: work
+- panes:
+  - make watch_test
+  window_name: test
+- panes:
+  - pipenv run ipython
+  window_name: ipython
+

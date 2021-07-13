@@ -37,6 +37,7 @@ composer
 neovim
 entr
 gh
+yarn
 "
 head_programs="
 universal-ctags/universal-ctags/universal-ctags

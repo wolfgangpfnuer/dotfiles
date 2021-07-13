@@ -1,0 +1,16 @@
+session_name: salt
+start_directory: ~/salt
+windows:
+- layout: even-horizontal
+  panes:
+  - ./kraken.py -s farmer arbiter surveyor -o 9993 2 15 19
+  window_name: kraken
+- panes:
+  - clear
+  window_name: work
+- panes:
+  - shell_command:
+    - ssh salt1
+    - clear
+  window_name: salt1
+
