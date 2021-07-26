@@ -1,4 +1,4 @@
-sudo python3.8 -m pip install --upgrade \
+sudo python3 -m pip install --upgrade \
 fabric `# tool for deployment` \
 pexpect `# remote-control interactive bash processes from python` \
 neovim `# neovim plugin` \
@@ -10,8 +10,6 @@ httpie `# like curl but with json support` \
 flake8 `# pep8 and complexity` \
 autopep8 `# autocorrect pep8 errors` \
 invoke `# the non-ssh part of fabric 2` \
-git-devbliss `# git-devbliss from github` \
-jedi `# autocompletion helper` \
 ipython `# interactive python` \
 psutil `# for tmux-powerline` \
 pyyaml `# yaml` \
@@ -19,3 +17,5 @@ pynvim `# neovim plugin` \
 pipenv `# better package manager?` \
 pymode `# helper for pymode plugin in vim` \
 tmuxp `# tmux setup` \
+python-language-server `# pyls` \
+git-devbliss `# git-devbliss from github` \

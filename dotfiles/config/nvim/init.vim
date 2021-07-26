@@ -15,12 +15,37 @@ let g:neoterm_autoscroll = 1
 call minpac#add('junegunn/fzf') " fuzzy finder
 
 call minpac#add('beeender/Comrade')  " intelliJ
-call minpac#add('Shougo/deoplete.nvim')
-call minpac#add('neoclide/coc.nvim')  " conquer of completion
-call minpac#add('puremourning/vimspector')  " debugger
-let g:deoplete#enable_at_startup = 1
 
-call minpac#add('davidhalter/jedi-vim') " python completion
+"call minpac#add('Shougo/deoplete.nvim')
+"let g:deoplete#enable_at_startup = 0
+" call minpac#add('davidhalter/jedi-vim') " python completion
+
+call minpac#add('neoclide/coc.nvim', {'branch': 'release'})  " conquer of completion
+call minpac#add('pappasam/coc-jedi', { 'do': ' ! yarn install --frozen-lockfile && yarn build' })
+
+" call minpac#add('neovim/nvim-lspconfig')
+" lua << EOF
+" require'lspconfig'.jedi_language_server.setup{}
+
+" local custom_lsp_attach = function(client)
+"   -- See `:help nvim_buf_set_keymap()` for more information
+"   vim.api.nvim_buf_set_keymap(0, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
+"   vim.api.nvim_buf_set_keymap(0, 'n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
+"   -- ... and other keymappings for LSP
+
+"   -- Use LSP as the handler for omnifunc.
+"   --    See `:help omnifunc` and `:help ins-completion` for more information.
+"   vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+"   -- For plugins with an `on_attach` callback, call them here. For example:
+"   -- require('completion').on_attach()
+" end
+" EOF
+
+
+call minpac#add('puremourning/vimspector')  " debugger
+
+
 
 call minpac#add('christoomey/vim-tmux-navigator')  " tmux navigation
 
@@ -111,10 +136,10 @@ set backup                  " Backups are nice ...
 set undofile                " So is persistent undo ...
 set undolevels=1000         " Maximum number of changes that can be undone
 set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
-set undodir=~/.vim/.vimundo
-set directory=~/.vim/.vimswap
-set backupdir=~/.vim/.vimbackup
-set viewdir=~/.vim/.vimviews
+set undodir=~/.nvim/.vimundo
+set directory=~/.nvim/.vimswap
+set backupdir=~/.nvim/.vimbackup
+set viewdir=~/.nvim/.vimviews
 
 set hidden " don't warn when switching unsaved buffers
 
@@ -156,3 +181,4 @@ vnoremap . :normal .<CR>
 syntax enable
 
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif  " Always switch to the current file directory
+
