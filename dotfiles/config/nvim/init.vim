@@ -1,6 +1,9 @@
 set termguicolors
 filetype plugin indent on
 
+let g:python3_host_prog = 'python3'
+
+
 packadd minpac
 
 call minpac#init()

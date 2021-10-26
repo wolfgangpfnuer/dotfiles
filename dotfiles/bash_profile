@@ -36,11 +36,16 @@ export ANSIBLE_SSH_PIPELINING=1
 export ANSIBLE_FORKS=25
 alias ansible='ansible -i ~/ec2.py -u ubuntu'
 alias deploy='git push --atomic origin $(git branch --show-current) $(git describe --tags)'
-ssh-add -K ~/.ssh/id_rsa
+ssh-add --apple-use-keychain ~/.ssh/id_rsa
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 
 # Setting PATH for Python 3.9
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
+export PATH
+
+# Setting PATH for Python 3.10
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
 export PATH

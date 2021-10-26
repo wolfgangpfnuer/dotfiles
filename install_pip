@@ -1,3 +1,4 @@
+sudo /Applications/Python\ 3.10/Install\ Certificates.command
 sudo python3 -m pip install --upgrade \
 fabric `# tool for deployment` \
 pexpect `# remote-control interactive bash processes from python` \
@@ -18,4 +19,3 @@ pipenv `# better package manager?` \
 pymode `# helper for pymode plugin in vim` \
 tmuxp `# tmux setup` \
 python-language-server `# pyls` \
-git-devbliss `# git-devbliss from github` \

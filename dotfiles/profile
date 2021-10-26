@@ -11,6 +11,7 @@ alias ls='ls -G'
 alias ll='ls -la'
 
 alias ed='ed -p:'
+alias kafkacat='kcat'
 
 source ~/bash_secrets
 export LC_ALL=en_US.UTF-8
