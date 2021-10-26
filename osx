@@ -3,6 +3,8 @@
 # ~/.osx — http://mths.be/osx
 
 # Ask for the administrator password upfront
+
+exit 1
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
