@@ -8,6 +8,9 @@ windows:
     - clear
   window_name: work
 - panes:
+  - git status
+  window_name: sh
+- panes:
   - make watch_test
   window_name: test
 - panes:
