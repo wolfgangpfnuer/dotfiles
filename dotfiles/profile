@@ -5,8 +5,6 @@ export EDITOR='vi'
 export MAVEN_OPTS=-Xmx1024m
 export MAPPING_SIGN_KEY=~/fe.der
 
-alias vim="nvim"
-alias vi='vim'
 alias ls='ls -G'
 alias ll='ls -la'
 

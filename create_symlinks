@@ -29,3 +29,11 @@ cat <<EOF > ~/bin/mux
 #! /usr/bin/env bash
 tmuxp load \$@
 EOF
+
+cat <<EOF > ~/bin/vi
+#! /usr/bin/env bash
+lvim \$@
+EOF
+
+chmod 755 ~/bin/mux
+chmod 755 ~/bin/vi
