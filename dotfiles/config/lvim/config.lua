@@ -63,7 +63,7 @@ lvim.keys.normal_mode["<c-l>"] = ":wincmd l<CR>"
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.dashboard.active = true
+lvim.builtin.alpha.mode = "dashboard" -- or "startify"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
@@ -128,38 +128,40 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- }
 
 -- -- set additional linters
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   { command = "flake8", filetypes = { "python" } },
---   {
---     -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
---     command = "shellcheck",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     extra_args = { "--severity", "warning" },
---   },
---   {
---     command = "codespell",
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "javascript", "python" },
---   },
--- }
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  { command = "flake8", filetypes = { "python" } },
+}
 
 -- Additional Plugins
 lvim.plugins = {
-    {"mbbill/undotree"},
-    {"tpope/vim-projectionist"},
-    {"tpope/vim-surround"},
-    {"christoomey/vim-tmux-navigator"},
---     {"folke/tokyonight.nvim"},
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
+  { "mbbill/undotree" },
+  { "tpope/vim-projectionist" },
+  { "tpope/vim-surround" },
+  { "christoomey/vim-tmux-navigator" },
+  {
+    'wfxr/minimap.vim',
+    -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
+    config = function()
+      vim.cmd("let g:minimap_width = 10")
+      vim.cmd("let g:minimap_auto_start = 1")
+      vim.cmd("let g:minimap_auto_start_win_enter = 1")
+      vim.cmd("let g:minimap_git_colors = 1")
+      vim.cmd("let g:minimap_highlight_search = 1")
+      vim.cmd("let g:minimap_highlight_range = 1")
+    end,
+  },
+  --     {"folke/tokyonight.nvim"},
+  --     {
+  --       "folke/trouble.nvim",
+  --       cmd = "TroubleToggle",
+  --     },
 }
 lvim.keys.normal_mode["<Leader>u"] = ":UndotreeToggle<CR>"
 
+
+
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
--- }
+lvim.autocommands.custom_groups = {
+  { "BufWinEnter", "*.*", "MinimapToggle" },
+}

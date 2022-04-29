@@ -38,6 +38,7 @@ neovim
 entr
 gh
 yarn
+code-minimap
 "
 head_programs="
 universal-ctags/universal-ctags/universal-ctags
