@@ -1,5 +1,5 @@
 sudo /Applications/Python\ 3.10/Install\ Certificates.command
-sudo python3 -m pip install --upgrade \
+python3 -m pip install --upgrade \
 fabric `# tool for deployment` \
 pexpect `# remote-control interactive bash processes from python` \
 neovim `# neovim plugin` \

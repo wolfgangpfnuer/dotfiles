@@ -21,10 +21,10 @@ lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
-lvim.keys.normal_mode["<c-h>"] = ":wincmd h<CR>"
-lvim.keys.normal_mode["<c-j>"] = ":wincmd j<CR>"
-lvim.keys.normal_mode["<c-k>"] = ":wincmd k<CR>"
-lvim.keys.normal_mode["<c-l>"] = ":wincmd l<CR>"
+lvim.keys.normal_mode["<C-h>"] = ":wincmd h<CR>"
+lvim.keys.normal_mode["<C-j>"] = ":wincmd j<CR>"
+lvim.keys.normal_mode["<C-k>"] = ":wincmd k<CR>"
+lvim.keys.normal_mode["<C-l>"] = ":wincmd l<CR>"
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
