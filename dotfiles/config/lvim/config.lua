@@ -16,15 +16,16 @@ vim.opt.undofile = true -- enable persistent undo
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 
 lvim.builtin.lualine.sections.lualine_y = { "location" }
+
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
-lvim.keys.normal_mode["<C-h>"] = ":wincmd h<CR>"
-lvim.keys.normal_mode["<C-j>"] = ":wincmd j<CR>"
-lvim.keys.normal_mode["<C-k>"] = ":wincmd k<CR>"
-lvim.keys.normal_mode["<C-l>"] = ":wincmd l<CR>"
+-- lvim.keys.normal_mode["<C-h>"] = ":wincmd h<CR>"
+-- lvim.keys.normal_mode["<C-j>"] = ":wincmd j<CR>"
+-- lvim.keys.normal_mode["<C-k>"] = ":wincmd k<CR>"
+-- lvim.keys.normal_mode["<C-l>"] = ":wincmd l<CR>"
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
@@ -135,6 +136,7 @@ linters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
+  { "f-person/git-blame.nvim" },
   { "mbbill/undotree" },
   { "tpope/vim-projectionist" },
   { "tpope/vim-surround" },
