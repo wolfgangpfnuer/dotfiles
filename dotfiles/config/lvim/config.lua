@@ -68,7 +68,7 @@ lvim.builtin.alpha.mode = "dashboard" -- or "startify"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
+-- lvim.builtin.nvimtree.show_icons.git = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -164,6 +164,8 @@ lvim.keys.normal_mode["<Leader>u"] = ":UndotreeToggle<CR>"
 
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
-lvim.autocommands.custom_groups = {
-  { "BufWinEnter", "*.*", "MinimapToggle" },
-}
+
+-- vim.api.nvim_create_autocmd("BufWinEnter", {
+--   pattern = { "*.*" },
+--   command = "MinimapToggle"
+-- })
