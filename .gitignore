@@ -4,4 +4,4 @@ dotfiles/grip/cache-*
 dotfiles/config/*
 !dotfiles/config/powerline
 !dotfiles/config/nvim/init.vim
-!dotfiles/config/lvim/config.lua
+!dotfiles/config/lvim
