@@ -17,3 +17,4 @@ export LANG=en_US.UTF-8
 
 export FIX_MAC_OMG="apt-get update && apt-get install -y build-essential &&"
 export LSCOLORS=ExFxBxDxCxegedabagacad  # better colors for dark BG
+ulimit -n 10240
