@@ -29,7 +29,7 @@ fi
 #source ~/.docker_env
 export PATH="/usr/local/opt/python@3.9/bin:/usr/local/opt/python@3.8/bin:~/Library/Python/2.7/bin:/usr/local/sbin:~/.local/bin:$PATH"
 eval "$(hub alias -s)"
-ssh-add -k .ssh/ocono_rsa
+#ssh-add -k .ssh/ocono_rsa
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export ANSIBLE_SSH_PIPELINING=1
@@ -54,3 +54,10 @@ export PATH
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
 export PATH
+
+# Setting PATH for Python 3.11
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
+export PATH
+
+source /Users/wpfnuer/.docker/init-bash.sh || true # Added by Docker Desktop

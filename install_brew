@@ -4,6 +4,7 @@ which brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.co
 
 taps="
 homebrew/php
+homebrew/cask-fonts
 "
 programs="
 reattach-to-user-namespace
@@ -25,12 +26,12 @@ openssl
 readline
 jq
 go
-mercurial
 ack
 terminal-notifier
 watch
 tmux
 npm
+node
 php56
 php56-xdebug
 composer
@@ -45,16 +46,9 @@ universal-ctags/universal-ctags/universal-ctags
 "
 
 casks="
-skype
-vagrant
-virtualbox
-seil
-karabiner
 iterm2
 hammerspoon
-sequel-pro
-github-desktop
-chefdk
+font-inconsolata-go-nerd-font
 "
 
 brew update
