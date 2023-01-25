@@ -1,0 +1,17 @@
+session_name: ios
+windows:
+- layout: even-horizontal
+  panes:
+  - shell_command:
+    - cd dashboard_ios/Dashboard
+    - clear
+  window_name: dashboard
+- panes:
+  - shell_command:
+    - cd iOS-sdk
+    - clear
+  window_name: sdk
+- panes:
+  - shell_command:
+    - swift repl
+  window_name: swift-repl
