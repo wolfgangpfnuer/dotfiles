@@ -1,0 +1,18 @@
+session_name: react
+windows:
+- layout: even-horizontal
+  panes:
+  - shell_command:
+    - cd ReactProject
+    - clear
+  window_name: test-project
+- panes:
+  - shell_command:
+    - cd react_native_sdk
+    - clear
+  window_name: sdk
+- panes:
+  - shell_command:
+    - cd ReactProject
+    - clear
+  window_name: shell

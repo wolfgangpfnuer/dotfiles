@@ -14,5 +14,5 @@ windows:
   - make watch_test
   window_name: test
 - panes:
-  - pipenv run ipython
+  - .venv/bin/ipython
   window_name: ipython

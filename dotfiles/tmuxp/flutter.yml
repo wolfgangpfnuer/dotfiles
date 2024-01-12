@@ -1,0 +1,18 @@
+session_name: flutter
+windows:
+- layout: even-horizontal
+  panes:
+  - shell_command:
+    - cd StudioProjects/test123
+    - clear
+  window_name: test-project
+- panes:
+  - shell_command:
+    - cd StudioProjects/swaarm_sdk
+    - clear
+  window_name: sdk
+- panes:
+  - shell_command:
+    - cd StudioProjects/swaarm_sdk
+    - clear
+  window_name: shell

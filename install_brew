@@ -5,6 +5,7 @@ which brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.co
 taps="
 homebrew/php
 homebrew/cask-fonts
+dart-lang/dart
 "
 programs="
 reattach-to-user-namespace
@@ -12,6 +13,7 @@ curl
 bash
 bash-completion
 caskroom/cask/brew-cask
+dart
 git
 git-lfs
 hub
@@ -40,6 +42,8 @@ entr
 gh
 yarn
 code-minimap
+lazygit
+rust
 "
 head_programs="
 universal-ctags/universal-ctags/universal-ctags
