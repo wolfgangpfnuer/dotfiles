@@ -38,7 +38,6 @@ php56
 php56-xdebug
 composer
 neovim
-entr
 gh
 yarn
 code-minimap
@@ -64,3 +63,4 @@ brew cask install $casks 2>&1 | grep -v 'Warning:.*already installed'
 brew upgrade
 brew cleanup
 brew cask cleanup
+npm install -g nodemon
