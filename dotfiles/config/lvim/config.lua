@@ -12,7 +12,7 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
-vim.opt.undofile = true -- enable persistent undo
+vim.opt.undofile = true           -- enable persistent undo
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 
 lvim.builtin.lualine.sections.lualine_y = { "location" }
@@ -114,8 +114,8 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { command = "black", filetypes = { "python" } },
-  { command = "isort", filetypes = { "python" } },
+  { command = "black",       filetypes = { "python" } },
+  { command = "isort",       filetypes = { "python" } },
   { command = "swiftformat", filetypes = { "swift" } },
   --   {
   --     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
@@ -132,7 +132,7 @@ formatters.setup {
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   { command = "flake8", filetypes = { "python" } },
-  { command = "mypy", filetypes = { "python" } },
+  { command = "mypy",   filetypes = { "python" } },
 }
 
 

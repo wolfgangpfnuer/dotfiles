@@ -12,7 +12,8 @@
 	name = Wolfgang Pfnür
 	email = wolfgang.pfnuer@swaarm.com
 [push]
-    default = current
+  default = current
+  followTags = true
 [pull]
     default = current
 	rebase = false
